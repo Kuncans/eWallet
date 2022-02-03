@@ -12,16 +12,21 @@ struct PaymentCard {
     let balance: Double
     let cardNumber: String
     let expiry: DateComponents
-    let cardType: String
+    let cardType: cardType
     let cardHolder: String
 }
 
 struct MockCard {
     
     static let mockPaymentCard = PaymentCard(balance: 2400.42,
-                                      cardNumber: "3904 **** **** 3094",
-                                      expiry: DateComponents(month: 03, day: 26),
-                                      cardType: "visa",
-                                      cardHolder: "d t kent")
-    
+                                             cardNumber: "3904 **** **** 3094",
+                                             expiry: DateComponents(month: 03, day: 26),
+                                             cardType: .mastercard,
+                                             cardHolder: "d t kent")
+}
+
+enum cardType {
+    case visa
+    case amex
+    case mastercard
 }

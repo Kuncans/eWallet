@@ -10,6 +10,7 @@ import SwiftUI
 struct PaymentCardView: View {
     
     let paymentCard: PaymentCard
+    @State private var cardType: String = ""
     
     var body: some View {
         ZStack {
@@ -31,23 +32,41 @@ struct PaymentCardView: View {
                             
                             Text(paymentCard.cardHolder.uppercased())
                                 .font(.subheadline)
+                                .bold()
                                 .frame(maxHeight: .infinity, alignment: .bottom)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.bottom, 4)
                                 .lineLimit(1)
                                 .foregroundColor(.white)
                                 
+                                
                         }
                         Spacer()
                         
-                        Text(paymentCard.cardType.uppercased())
-                            .font(.title.weight(.bold).italic())
-                            .padding()
-                            .foregroundColor(.white)
-                            .frame(maxHeight: .infinity, alignment: .top)
-                        
+                        switch paymentCard.cardType {
+                        case .visa:
+                            Image("VisaType")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, alignment: .leading)
+                                .padding(.trailing, 0)
+                                .clipShape(Capsule().scale(0.8))
+                        case .amex:
+                            Image("AmexType")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, alignment: .leading)
+                                .padding(.trailing, 0)
+                                .clipShape(Capsule().scale(0.8))
+                        case .mastercard:
+                            Image("MastercardType")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, alignment: .leading)
+                                .padding(.trailing, 0)
+                                .clipShape(Capsule().scale(0.8))
+                        }
                     }
-                    
                 }
                 .frame(maxWidth: .infinity, alignment: .top)
                 
@@ -57,19 +76,23 @@ struct PaymentCardView: View {
                     HStack {
                         Text("Card Number")
                             .font(.caption)
-                        
                             .frame(maxWidth: 220, alignment: .leading)
-                        Text("Expiry")
-                            .font(.caption)
                         Spacer()
+                        Text("Expires")
+                            .font(.caption)
+                            .frame(maxWidth: 50, alignment: .leading)
+
+                        
                     }
                     HStack {
                         Text(paymentCard.cardNumber)
                             .bold()
                             .frame(maxWidth: 220, alignment: .leading)
+                        Spacer()
                         Text("\(paymentCard.expiry.month ?? 0)/\(paymentCard.expiry.day ?? 0)")
                             .bold()
-                        Spacer()
+                            .frame(maxWidth: 50, alignment: .leading)
+                        
                     }
                 }
                 .foregroundColor(.white)
@@ -92,15 +115,16 @@ struct PaymentCardView: View {
                             .offset(x: 150, y: -150)
                             .foregroundColor(.secondary.opacity(0.3))
             )
-            
+            .background(LinearGradient(colors: [.blue, .purple], startPoint: .topLeading, endPoint: .bottomLeading))
             .clipped()
-            .background(Color.purple.opacity(0.9), in: RoundedRectangle(
-                cornerRadius: 30,
-                style: .continuous))
+            .background(RoundedRectangle(cornerRadius: 20, style: .continuous))
+
         }
-        .cornerRadius(30)
-        .shadow(color: .primary, radius: 3, x: 2, y: 2)
+        .cornerRadius(20)
+        .shadow(color: .primary.opacity(0.7), radius: 3, x: 0, y: 0)
+        
     }
+        
     
     
 }
