@@ -10,7 +10,6 @@ import SwiftUI
 struct PaymentCardView: View {
     
     let paymentCard: PaymentCard
-    @State private var cardType: String = ""
     
     var body: some View {
         ZStack {
@@ -85,7 +84,7 @@ struct PaymentCardView: View {
                         
                     }
                     HStack {
-                        Text(paymentCard.cardNumber)
+                        Text(paymentCard.hiddenCard)
                             .bold()
                             .frame(maxWidth: 220, alignment: .leading)
                         Spacer()
@@ -124,17 +123,16 @@ struct PaymentCardView: View {
         .shadow(color: .primary.opacity(0.7), radius: 3, x: 0, y: 0)
         
     }
-        
-    
-    
 }
 
 struct PaymentCardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             PaymentCardView(paymentCard: MockCard.mockPaymentCard)
+                .previewLayout(.sizeThatFits)
             PaymentCardView(paymentCard: MockCard.mockPaymentCard)
                 .preferredColorScheme(.dark)
+                .previewLayout(.sizeThatFits)
         }
     }
 }
