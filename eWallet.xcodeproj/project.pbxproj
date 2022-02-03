@@ -12,6 +12,7 @@
 		9530F35827AC1FE600F2F416 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9530F35727AC1FE600F2F416 /* Preview Assets.xcassets */; };
 		9530F36127AC202100F2F416 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36027AC202100F2F416 /* HomeView.swift */; };
 		9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36727AC20EB00F2F416 /* PaymentCardView.swift */; };
+		9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36A27AC2C9400F2F416 /* PaymentCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		9530F35727AC1FE600F2F416 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9530F36027AC202100F2F416 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9530F36727AC20EB00F2F416 /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
+		9530F36A27AC2C9400F2F416 /* PaymentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		9530F35E27AC200800F2F416 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9530F36927AC2C7600F2F416 /* Models */,
 				9530F36227AC20BF00F2F416 /* Components */,
 				9530F35F27AC201600F2F416 /* HomeView */,
 			);
@@ -100,6 +103,14 @@
 				9530F36727AC20EB00F2F416 /* PaymentCardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9530F36927AC2C7600F2F416 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9530F36A27AC2C9400F2F416 /* PaymentCard.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */,
 				9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */,
 				9530F35127AC1FE600F2F416 /* eWalletApp.swift in Sources */,
 				9530F36127AC202100F2F416 /* HomeView.swift in Sources */,

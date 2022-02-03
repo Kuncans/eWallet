@@ -9,34 +9,42 @@ import SwiftUI
 
 struct PaymentCardView: View {
     
-    
+    let paymentCard: PaymentCard
     
     var body: some View {
         ZStack {
             VStack {
                 VStack {
-                    HStack {
+                    HStack(alignment: .top) {
                         VStack (alignment: .leading, spacing: 0) {
                             Text("Balance")
                                 .font(.title3)
                                 .foregroundColor(.white)
                             HStack (spacing: 6) {
-                                Text("£1500.00")
+                                Text("£\(paymentCard.balance, specifier: "%.2f")")
                                     .font(.title)
                                     .bold()
                                     .foregroundColor(.white)
                                     .lineLimit(1)
-                                
-                                    
                             }
                             .frame(maxWidth: 220, alignment: .leading)
+                            
+                            Text(paymentCard.cardHolder.uppercased())
+                                .font(.subheadline)
+                                .frame(maxHeight: .infinity, alignment: .bottom)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom, 4)
+                                .lineLimit(1)
+                                .foregroundColor(.white)
+                                
                         }
                         Spacer()
                         
-                        Text("VISA")
+                        Text(paymentCard.cardType.uppercased())
                             .font(.title.weight(.bold).italic())
                             .padding()
                             .foregroundColor(.white)
+                            .frame(maxHeight: .infinity, alignment: .top)
                         
                     }
                     
@@ -48,18 +56,18 @@ struct PaymentCardView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
                         Text("Card Number")
-                            .font(.subheadline)
+                            .font(.caption)
                         
                             .frame(maxWidth: 220, alignment: .leading)
                         Text("Expiry")
-                            .font(.subheadline)
+                            .font(.caption)
                         Spacer()
                     }
                     HStack {
-                        Text("0398 **** **** 9034")
+                        Text(paymentCard.cardNumber)
                             .bold()
                             .frame(maxWidth: 220, alignment: .leading)
-                        Text("09/24")
+                        Text("\(paymentCard.expiry.month ?? 0)/\(paymentCard.expiry.day ?? 0)")
                             .bold()
                         Spacer()
                     }
@@ -100,8 +108,8 @@ struct PaymentCardView: View {
 struct PaymentCardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PaymentCardView()
-            PaymentCardView()
+            PaymentCardView(paymentCard: MockCard.mockPaymentCard)
+            PaymentCardView(paymentCard: MockCard.mockPaymentCard)
                 .preferredColorScheme(.dark)
         }
     }
