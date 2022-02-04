@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct PaymentCard {
-    let cardID = UUID()
+struct PaymentCard: Identifiable {
+    let id = UUID()
     let balance: Double
     let cardNumber: Int
     let expiry: DateComponents

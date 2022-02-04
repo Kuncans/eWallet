@@ -25,11 +25,12 @@ struct PaymentCardView: View {
     
                 Spacer()
                 cardDetailsBottom
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(20)
-            .frame(height: 220, alignment: .top)
+            //.frame(minWidth: 320)
+            .frame(maxHeight: 220, alignment: .top)
             .frame(maxWidth: 350)
             .background(Circle()
                             .stroke(lineWidth: 40)
@@ -43,7 +44,7 @@ struct PaymentCardView: View {
                             .offset(x: 150, y: -150)
                             .foregroundColor(.secondary.opacity(0.3))
             )
-            .background(LinearGradient(colors: [.pink, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
+            .background(LinearGradient(colors: [.mint, .green], startPoint: .topLeading, endPoint: .bottomTrailing))
         }
         .cornerRadius(20)
         .shadow(color: .primary.opacity(0.7), radius: 3, x: 1, y: 1)
@@ -74,12 +75,12 @@ extension PaymentCardView {
         VStack (alignment: .leading, spacing: 0) {
             Text("Balance")
                 .font(.title3)
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
             HStack (spacing: 6) {
                 Text("£\(paymentCard.balance, specifier: "%.2f")")
                     .font(.title)
                     .bold()
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                     .lineLimit(1)
             }
             .frame(maxWidth: 220, alignment: .leading)
@@ -91,7 +92,7 @@ extension PaymentCardView {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 4)
                 .lineLimit(1)
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
         }
     }
     

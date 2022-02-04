@@ -9,7 +9,21 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 20) {
+                ForEach(MockCard.mockPaymentCardList) { card in
+                    PaymentCardView(paymentCard: card)
+                }
+                .aspectRatio(contentMode: .fill)
+                
+            }
+            .padding(.horizontal, 20)
+            .padding(.top, 16)
+            .padding(.bottom, 16)
+        }
+        
+        Spacer()
+        
     }
 }
 
