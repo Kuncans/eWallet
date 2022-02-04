@@ -10,14 +10,30 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @State private var emptyCardList: Bool = false
     
     var body: some View {
         
-        cardScrollView
-        
-        Spacer()
-        
+        VStack {
+            if !emptyCardList {
+                cardScrollView
+            }
+            
+            if emptyCardList {
+                Button {
+                    print("add new card")
+                } label: {
+                    EmptyPaymentCardView()
+                }
 
+            }
+            
+            Spacer()
+        }
+        
+        
+        
+        
         
     }
 }
@@ -42,7 +58,7 @@ extension HomeView  {
                             PaymentCardView(paymentCard: card)
                                 .frame(minWidth: geometry.size.width)
                                 .onTapGesture {
-                                    print(card.cardNumber)
+                                    //TODO: Add Card Modal/Sheet
                                 }
                         }
                     }

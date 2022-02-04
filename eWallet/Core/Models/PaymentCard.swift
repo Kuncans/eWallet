@@ -19,8 +19,6 @@ struct PaymentCard: Identifiable {
         let newString = oldString.prefix(4) + " **** **** " + oldString.suffix(4)
         return newString
     }
-    
-    
 }
 
 struct MockCard {

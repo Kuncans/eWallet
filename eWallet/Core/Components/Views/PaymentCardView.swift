@@ -29,8 +29,8 @@ struct PaymentCardView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(20)
-            .frame(maxHeight: 175, alignment: .top)
-            .frame(maxWidth: 280)
+            .frame(minHeight: 205)
+            .frame(maxWidth: 350)
             .background(Circle()
                             .stroke(lineWidth: 35)
                             .frame(width: 240)

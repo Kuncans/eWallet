@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		952E126327AD7EFC00A3719E /* EmptyPaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E126227AD7EFC00A3719E /* EmptyPaymentCardView.swift */; };
 		9530F35127AC1FE600F2F416 /* eWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F35027AC1FE600F2F416 /* eWalletApp.swift */; };
 		9530F35527AC1FE600F2F416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9530F35427AC1FE600F2F416 /* Assets.xcassets */; };
 		9530F35827AC1FE600F2F416 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9530F35727AC1FE600F2F416 /* Preview Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		952E126227AD7EFC00A3719E /* EmptyPaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPaymentCardView.swift; sourceTree = "<group>"; };
 		9530F34D27AC1FE600F2F416 /* eWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9530F35027AC1FE600F2F416 /* eWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eWalletApp.swift; sourceTree = "<group>"; };
 		9530F35427AC1FE600F2F416 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				9530F36727AC20EB00F2F416 /* PaymentCardView.swift */,
+				952E126227AD7EFC00A3719E /* EmptyPaymentCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */,
 				9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */,
 				9530F35127AC1FE600F2F416 /* eWalletApp.swift in Sources */,
+				952E126327AD7EFC00A3719E /* EmptyPaymentCardView.swift in Sources */,
 				9530F36127AC202100F2F416 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
