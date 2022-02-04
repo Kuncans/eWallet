@@ -19,7 +19,7 @@ struct PaymentCard: Identifiable {
         let newString = oldString.prefix(4) + " **** **** " + oldString.suffix(4)
         return newString
     }
-
+    
     
 }
 
@@ -37,17 +37,73 @@ struct MockCard {
                                                                  cardType: .visa,
                                                                  cardHolder: "a c holder1"),
                                                      PaymentCard(balance: 1345.25,
-                                                                cardNumber: 0194883949403948,
-                                                                expiry: DateComponents(month: 04, day: 27),
-                                                                cardType: .amex,
-                                                                cardHolder: "a c holder2"),
+                                                                 cardNumber: 0194883949403948,
+                                                                 expiry: DateComponents(month: 04, day: 27),
+                                                                 cardType: .amex,
+                                                                 cardHolder: "a c holder2"),
                                                      
                                                      PaymentCard(balance: 843.29,
-                                                                cardNumber: 4394903999403940,
-                                                                expiry: DateComponents(month: 05, day: 28),
-                                                                cardType: .mastercard,
-                                                                cardHolder: "a c holder3")
+                                                                 cardNumber: 4394903999403940,
+                                                                 expiry: DateComponents(month: 05, day: 28),
+                                                                 cardType: .mastercard,
+                                                                 cardHolder: "a c holder3"),
+                                                     
+                                                     PaymentCard(balance: 843.29,
+                                                                 cardNumber: 4394903999403940,
+                                                                 expiry: DateComponents(month: 05, day: 28),
+                                                                 cardType: .mastercard,
+                                                                 cardHolder: "a c holder3"),
+                                                     
+                                                     PaymentCard(balance: 843.29,
+                                                                 cardNumber: 4394903999403940,
+                                                                 expiry: DateComponents(month: 05, day: 28),
+                                                                 cardType: .mastercard,
+                                                                 cardHolder: "a c holder3"),
+                                                     
+                                                     PaymentCard(balance: 843.29,
+                                                                 cardNumber: 4394903999403940,
+                                                                 expiry: DateComponents(month: 05, day: 28),
+                                                                 cardType: .mastercard,
+                                                                 cardHolder: "a c holder3"),
+                                                     
+                                                     PaymentCard(balance: 843.29,
+                                                                 cardNumber: 4394903999403940,
+                                                                 expiry: DateComponents(month: 05, day: 28),
+                                                                 cardType: .mastercard,
+                                                                 cardHolder: "a c holder3"),
+                                                     
+                                                     PaymentCard(balance: 843.29,
+                                                                 cardNumber: 4394903999403940,
+                                                                 expiry: DateComponents(month: 05, day: 28),
+                                                                 cardType: .mastercard,
+                                                                 cardHolder: "a c holder3"),
+                                                     
+                                                     PaymentCard(balance: 843.29,
+                                                                 cardNumber: 4394903999403940,
+                                                                 expiry: DateComponents(month: 05, day: 28),
+                                                                 cardType: .mastercard,
+                                                                 cardHolder: "a c holder3")
     ]
+    
+    static let mockPaymentSingleCardList: [PaymentCard] = [PaymentCard(balance: 2400.42,
+                                                                       cardNumber: 3904039409304938,
+                                                                       expiry: DateComponents(month: 03, day: 26),
+                                                                       cardType: .visa,
+                                                                       cardHolder: "a c holder1")
+    ]
+    
+    static let mockPaymentDoubleCardList: [PaymentCard] = [PaymentCard(balance: 2400.42,
+                                                                 cardNumber: 3904039409304938,
+                                                                 expiry: DateComponents(month: 03, day: 26),
+                                                                 cardType: .visa,
+                                                                 cardHolder: "a c holder1"),
+                                                     PaymentCard(balance: 1345.25,
+                                                                 cardNumber: 0194883949403948,
+                                                                 expiry: DateComponents(month: 04, day: 27),
+                                                                 cardType: .amex,
+                                                                 cardHolder: "a c holder2")                                        
+    ]
+    
 }
 
 enum cardType {

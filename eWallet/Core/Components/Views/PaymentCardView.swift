@@ -29,26 +29,25 @@ struct PaymentCardView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(20)
-            //.frame(minWidth: 320)
-            .frame(maxHeight: 220, alignment: .top)
-            .frame(maxWidth: 350)
+            .frame(maxHeight: 175, alignment: .top)
+            .frame(maxWidth: 280)
             .background(Circle()
-                            .stroke(lineWidth: 40)
+                            .stroke(lineWidth: 35)
                             .frame(width: 240)
-                            .offset(x: -100, y: 190)
+                            .offset(x: -90, y: 150)
                             .foregroundColor(.secondary.opacity(0.3))
             )
             .background(Circle()
-                            .stroke(lineWidth: 40)
+                            .stroke(lineWidth: 35)
                             .frame(width: 200)
-                            .offset(x: 150, y: -150)
+                            .offset(x: 150, y: -140)
                             .foregroundColor(.secondary.opacity(0.3))
             )
-            .background(LinearGradient(colors: [.mint, .green], startPoint: .topLeading, endPoint: .bottomTrailing))
+            .background(LinearGradient(colors: [.purple, .pink], startPoint: .topLeading, endPoint: .bottomTrailing))
         }
         .cornerRadius(20)
         .shadow(color: .primary.opacity(0.7), radius: 3, x: 1, y: 1)
-        
+        .padding(8)
     }
 }
 

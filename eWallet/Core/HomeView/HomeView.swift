@@ -7,22 +7,17 @@
 
 import SwiftUI
 
+
 struct HomeView: View {
+    
+    
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 20) {
-                ForEach(MockCard.mockPaymentCardList) { card in
-                    PaymentCardView(paymentCard: card)
-                }
-                .aspectRatio(contentMode: .fill)
-                
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 16)
-            .padding(.bottom, 16)
-        }
+        
+        cardScrollView
         
         Spacer()
+        
+
         
     }
 }
@@ -30,5 +25,29 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+extension HomeView  {
+    private var cardScrollView: some View {
+        
+        let column: [GridItem] = [GridItem()]
+
+        return GeometryReader { geometry in
+            ScrollView(.horizontal, showsIndicators: false) {
+                
+                LazyVGrid (columns: column) {
+                    HStack(alignment: .center) {
+                        ForEach(MockCard.mockPaymentCardList) { card in
+                            PaymentCardView(paymentCard: card)
+                                .frame(minWidth: geometry.size.width)
+                                .onTapGesture {
+                                    print(card.cardNumber)
+                                }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
