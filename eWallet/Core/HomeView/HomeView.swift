@@ -30,11 +30,6 @@ struct HomeView: View {
             
             Spacer()
         }
-        
-        
-        
-        
-        
     }
 }
 

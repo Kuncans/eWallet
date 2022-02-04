@@ -14,6 +14,8 @@
 		9530F36127AC202100F2F416 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36027AC202100F2F416 /* HomeView.swift */; };
 		9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36727AC20EB00F2F416 /* PaymentCardView.swift */; };
 		9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36A27AC2C9400F2F416 /* PaymentCard.swift */; };
+		959CCEDD27AD8C9E00A0C10D /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959CCEDC27AD8C9E00A0C10D /* Payment.swift */; };
+		959CCEDF27AD924700A0C10D /* PaymentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959CCEDE27AD924700A0C10D /* PaymentCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		9530F36027AC202100F2F416 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9530F36727AC20EB00F2F416 /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
 		9530F36A27AC2C9400F2F416 /* PaymentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCard.swift; sourceTree = "<group>"; };
+		959CCEDC27AD8C9E00A0C10D /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		959CCEDE27AD924700A0C10D /* PaymentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			children = (
 				9530F36727AC20EB00F2F416 /* PaymentCardView.swift */,
 				952E126227AD7EFC00A3719E /* EmptyPaymentCardView.swift */,
+				959CCEDE27AD924700A0C10D /* PaymentCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				9530F36A27AC2C9400F2F416 /* PaymentCard.swift */,
+				959CCEDC27AD8C9E00A0C10D /* Payment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,7 +195,9 @@
 				9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */,
 				9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */,
 				9530F35127AC1FE600F2F416 /* eWalletApp.swift in Sources */,
+				959CCEDF27AD924700A0C10D /* PaymentCellView.swift in Sources */,
 				952E126327AD7EFC00A3719E /* EmptyPaymentCardView.swift in Sources */,
+				959CCEDD27AD8C9E00A0C10D /* Payment.swift in Sources */,
 				9530F36127AC202100F2F416 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
