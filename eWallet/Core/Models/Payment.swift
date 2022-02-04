@@ -18,6 +18,26 @@ struct Payment: Identifiable, Equatable {
         toFrom + String(time.hashValue)
     }
     
+    var dateString: String? {
+        guard
+                let year = time.year,
+                let month = time.month,
+                let day = time.day
+        else { return nil }
+        
+        return String(day) + "/" + String(month) + "/" + String(year).suffix(2)
+
+    }
+    
+    var timeString: String? {
+        guard
+            let hour = time.hour,
+            let minute = time.minute
+        else { return nil }
+        
+        return String(hour) + ":" + String(minute)
+    }
+    
     static func == (lhs: Payment, rhs: Payment) -> Bool {
         lhs.id == rhs.id
     }
@@ -25,7 +45,15 @@ struct Payment: Identifiable, Equatable {
 
 struct MockPayment {
     
-    static let mockPayment = Payment(toFrom: "Argos", amount: 25.42, time: DateComponents(), type: .travel, outgoing: true)
+    static let mockPayment = Payment(toFrom: "Riot Games",
+                                     amount: 25.00,
+                                     time: DateComponents(year: 2022,
+                                                          month: 3,
+                                                          day: 11,
+                                                          hour: 18,
+                                                          minute: 43),
+                                     type: .games,
+                                     outgoing: true)
     
 }
 

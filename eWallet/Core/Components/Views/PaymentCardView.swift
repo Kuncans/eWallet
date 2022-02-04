@@ -45,6 +45,7 @@ struct PaymentCardView: View {
             )
             .background(LinearGradient(colors: [.purple.opacity(0.8), .pink.opacity(0.8)], startPoint: .topLeading, endPoint: .bottomTrailing))
         }
+        .frame(maxHeight: 205)
         .cornerRadius(20)
         .shadow(color: .primary.opacity(0.7), radius: 5, x: 1, y: 1)
         .padding(8)
