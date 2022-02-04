@@ -9,25 +9,25 @@ import SwiftUI
 
 struct PaymentCellView: View {
     
-    let payment: Payment = MockPayment.mockPayment
+    let payment: Payment
     
     var body: some View {
         HStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 60, height: 60)
-                    .foregroundColor(.purple.opacity(0.2))
-                Image(systemName: "gamecontroller.fill")
+                    .foregroundColor(payment.type.paymentColor.opacity(0.2))
+                Image(systemName: payment.type.paymentSymbol)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 32)
-                    .foregroundColor(.purple.opacity(0.8))
+                    .foregroundColor(payment.type.paymentColor.opacity(0.8))
                     
             }
             .frame(width: 60, height: 60)
             
             VStack (alignment: .leading, spacing: 6){
-                Text((payment.outgoing ? "To " : "From ") + payment.toFrom)
+                Text(payment.toFrom)
                     .font(.callout)
                     .lineLimit(1)
 
@@ -44,9 +44,8 @@ struct PaymentCellView: View {
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-                
-                
             }
+            .frame(minWidth: 180)
             
             
             //Transaction
@@ -69,7 +68,12 @@ struct PaymentCellView: View {
 
 struct PaymentCellView_Previews: PreviewProvider {
     static var previews: some View {
-        PaymentCellView()
-.previewInterfaceOrientation(.portrait)
+        Group {
+            PaymentCellView(payment: MockPayment.mockPayment)
+            PaymentCellView(payment: MockPayment.mockPayment)
+                .preferredColorScheme(.dark)
+        }
+        
+        .previewLayout(.sizeThatFits)
     }
 }

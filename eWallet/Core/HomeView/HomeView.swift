@@ -28,7 +28,12 @@ struct HomeView: View {
 
             }
             
-            Spacer()
+            ScrollView (.vertical) {
+                ForEach(MockPayment.mockPaymentList) { payment in
+                    PaymentCellView(payment: payment)
+                }
+            }
+            
         }
     }
 }
@@ -54,11 +59,11 @@ extension HomeView  {
                                 .frame(minWidth: geometry.size.width)
                                 .onTapGesture {
                                     //TODO: Add Card Modal/Sheet
-                                }
+                            }
                         }
                     }
                 }
             }
-        }
+        }.frame(maxHeight: 220)
     }
 }
