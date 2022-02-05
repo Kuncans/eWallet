@@ -37,13 +37,13 @@ struct MockCard {
                                                                  expiry: DateComponents(month: 03, day: 26),
                                                                  cardType: .visa,
                                                                  cardHolder: "a c holder1",
-                                                                 cardColor: .green),
+                                                                 cardColor: .blue),
                                                      PaymentCard(balance: 1345.25,
                                                                  cardNumber: 0194883949403948,
                                                                  expiry: DateComponents(month: 04, day: 27),
                                                                  cardType: .amex,
                                                                  cardHolder: "a c holder2",
-                                                                 cardColor: .black),
+                                                                 cardColor: .purple),
                                                      
                                                      PaymentCard(balance: 843.29,
                                                                  cardNumber: 4394903999403940,
@@ -86,7 +86,10 @@ struct MockCard {
     
 }
 
-enum cardType {
+enum cardType: String, CaseIterable, Identifiable {
+    
+    var id: String { self.rawValue }
+    
     case visa
     case amex
     case mastercard

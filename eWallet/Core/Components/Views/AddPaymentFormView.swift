@@ -72,7 +72,7 @@ struct AddPaymentFormView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
-        .navigationTitle("Add A Payment")
+        .navigationTitle("Add A Transaction")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
