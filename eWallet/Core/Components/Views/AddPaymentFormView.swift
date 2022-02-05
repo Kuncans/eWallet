@@ -20,74 +20,62 @@ struct AddPaymentFormView: View {
     @State private var paymentCategory: paymentType = paymentType.entertainment
     
     var body: some View {
-        ScrollView {
-            VStack (spacing: 16) {
-                
-                Text("Select Payment Card")
-                    .font(.title3)
-                    .padding(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
+        
+        Form {
+            Section(header: Text("Payment Card")) {
                 TabView (selection: $selectedCard) {
                     ForEach(MockCard.mockPaymentCardList) { card in
                         PaymentCardView(paymentCard: card).tag(card)
                     }
                 }
-                .frame(width: 320, height: 230)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .frame(minHeight: 220)
                 .tabViewStyle(.page)
-                
+            }
+            
+            Section("Payment Details") {
                 TextField("Company Name", text: $toFrom)
-                    .padding(.leading)
                     .lineLimit(1)
-                    .frame(height: 45)
-                    .background(Color(UIColor.secondarySystemBackground))
                     .cornerRadius(10)
                 
-                HStack {
-                    TextField("Amount", value: $amount, format:
-                        .currency(code: Locale.current.currencyCode ?? "GBP"))
-                        .keyboardType(.decimalPad)
-                        .padding(.leading)
-                        .frame(height: 45)
-                        .frame(maxWidth: .infinity)
-                        .background(Color(UIColor.secondarySystemBackground))
-                        .cornerRadius(10)
-                        .lineLimit(1)
-                                         
-                        Picker(selection: $paymentCategory) {
-                            ForEach(paymentType.allCases, id: \.self) { category in
-                                Text(category.rawValue.capitalized)
-                            }
-                        } label: {
-                            Text(paymentCategory.rawValue.capitalized)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        }
-                        .frame(minWidth: 100)
-                        .padding(.trailing)
-                        .keyboardType(.decimalPad)
-                        .padding(.leading)
-                        .frame(height: 45)
-                        .foregroundColor(Color(UIColor.systemGray2))
-                        .background(Color(UIColor.secondarySystemBackground))
-                        .cornerRadius(10)
-
-
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                TextField("Amount", value: $amount, format:
+                                .currency(code: Locale.current.currencyCode ?? "GBP"))
+                    .keyboardType(.decimalPad)
+                    .cornerRadius(10)
+                    .lineLimit(1)
+            }
+            
+            Section("Payment Options") {
+                Toggle("Outgoing Payment", isOn: $outgoingPayment)
                 
-                Toggle("Outgoing Payment", isOn: $outgoingPayment.animation(.spring()))                      .padding(.leading)
-                
-                Toggle("Use Current Date/Time", isOn: $useCurrentDateTime.animation(.spring()))
-                    .padding(.leading)
+                Toggle("Use Current Date/Time", isOn: $useCurrentDateTime.animation(.spring(response: 2, dampingFraction: 0.2, blendDuration: 0.7)))
+                   
                 if !useCurrentDateTime {
                     DatePicker("", selection: $dateSelected, displayedComponents: [.date, .hourAndMinute])
                         .datePickerStyle(.graphical)
-                        .animation(.easeInOut(duration: 10), value: useCurrentDateTime)
                 }
             }
-            .padding(.horizontal, 16)
+            
+            Section("Payment Type") {
+                Picker(selection: $paymentCategory) {
+                    ForEach(paymentType.allCases, id: \.self) { category in
+                        Text(category.rawValue.capitalized)
+                    }
+                }
+                label: {
+                    Text("Category")
+                }
+            }
+            
+            Button {
+                print(paymentCategory)
+            } label: {
+                Text("Submit Payment")
+                    .frame(maxWidth: .infinity, alignment: .center)
+            }
         }
-        .padding(.vertical, 32)
+        .navigationTitle("Add A Payment")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
