@@ -51,7 +51,8 @@ struct PaymentCellView: View {
             //Transaction
             HStack {
                 Text(payment.outgoing ? "-" : "+")
-                Text("£\(payment.amount, specifier: "%.2f")")
+                Text(payment.amount, format: .currency(code: Locale.current.currencyCode ?? "GBP"))
+                
             }
             .foregroundColor(payment.outgoing ? .red : .green)
             .frame(maxHeight: 60, alignment: .center)
@@ -62,7 +63,7 @@ struct PaymentCellView: View {
         }
         .frame(maxHeight: 60, alignment: .center)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal)
+        
     }
 }
 

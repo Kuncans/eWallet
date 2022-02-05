@@ -33,6 +33,7 @@ struct HomeView: View {
                     PaymentCellView(payment: payment)
                 }
             }
+            .padding(.horizontal)
             
         }
     }

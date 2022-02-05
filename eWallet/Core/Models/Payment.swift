@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Payment: Identifiable, Equatable {
     let toFrom: String
-    let amount: Double
+    let amount: Decimal
     let time: DateComponents
     let type: paymentType
     let outgoing: Bool

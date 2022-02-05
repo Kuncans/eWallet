@@ -16,6 +16,7 @@
 		9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36A27AC2C9400F2F416 /* PaymentCard.swift */; };
 		959CCEDD27AD8C9E00A0C10D /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959CCEDC27AD8C9E00A0C10D /* Payment.swift */; };
 		959CCEDF27AD924700A0C10D /* PaymentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959CCEDE27AD924700A0C10D /* PaymentCellView.swift */; };
+		95A7B7FB27AE1819001FEDA4 /* AddPaymentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		9530F36A27AC2C9400F2F416 /* PaymentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCard.swift; sourceTree = "<group>"; };
 		959CCEDC27AD8C9E00A0C10D /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		959CCEDE27AD924700A0C10D /* PaymentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCellView.swift; sourceTree = "<group>"; };
+		95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				9530F36727AC20EB00F2F416 /* PaymentCardView.swift */,
 				952E126227AD7EFC00A3719E /* EmptyPaymentCardView.swift */,
 				959CCEDE27AD924700A0C10D /* PaymentCellView.swift */,
+				95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */,
+				95A7B7FB27AE1819001FEDA4 /* AddPaymentFormView.swift in Sources */,
 				9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */,
 				9530F35127AC1FE600F2F416 /* eWalletApp.swift in Sources */,
 				959CCEDF27AD924700A0C10D /* PaymentCellView.swift in Sources */,
