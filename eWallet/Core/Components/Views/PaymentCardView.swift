@@ -43,11 +43,11 @@ struct PaymentCardView: View {
                             .offset(x: 150, y: -140)
                             .foregroundColor(.secondary.opacity(0.3))
             )
-            .background(LinearGradient(colors: [.purple.opacity(0.8), .pink.opacity(0.8)], startPoint: .topLeading, endPoint: .bottomTrailing))
+            .background(LinearGradient(colors: [paymentCard.cardColor.color[0].opacity(0.8), paymentCard.cardColor.color[1].opacity(0.8)], startPoint: .topLeading, endPoint: .bottomTrailing))
         }
         .frame(maxHeight: 205)
         .cornerRadius(20)
-        .shadow(color: .primary.opacity(0.7), radius: 5, x: 1, y: 1)
+        .shadow(color: paymentCard.cardColor.color[0].opacity(0.7), radius: 5, x: 1, y: 1)
         .padding(8)
     }
 }

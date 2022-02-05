@@ -17,6 +17,7 @@
 		959CCEDD27AD8C9E00A0C10D /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959CCEDC27AD8C9E00A0C10D /* Payment.swift */; };
 		959CCEDF27AD924700A0C10D /* PaymentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959CCEDE27AD924700A0C10D /* PaymentCellView.swift */; };
 		95A7B7FB27AE1819001FEDA4 /* AddPaymentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */; };
+		95A7B7FD27AF2D4B001FEDA4 /* AddPaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7FC27AF2D4B001FEDA4 /* AddPaymentCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		959CCEDC27AD8C9E00A0C10D /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		959CCEDE27AD924700A0C10D /* PaymentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCellView.swift; sourceTree = "<group>"; };
 		95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentFormView.swift; sourceTree = "<group>"; };
+		95A7B7FC27AF2D4B001FEDA4 /* AddPaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				952E126227AD7EFC00A3719E /* EmptyPaymentCardView.swift */,
 				959CCEDE27AD924700A0C10D /* PaymentCellView.swift */,
 				95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */,
+				95A7B7FC27AF2D4B001FEDA4 /* AddPaymentCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				959CCEDF27AD924700A0C10D /* PaymentCellView.swift in Sources */,
 				952E126327AD7EFC00A3719E /* EmptyPaymentCardView.swift in Sources */,
 				959CCEDD27AD8C9E00A0C10D /* Payment.swift in Sources */,
+				95A7B7FD27AF2D4B001FEDA4 /* AddPaymentCardView.swift in Sources */,
 				9530F36127AC202100F2F416 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

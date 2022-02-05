@@ -36,12 +36,10 @@ struct AddPaymentFormView: View {
             Section("Payment Details") {
                 TextField("Company Name", text: $toFrom)
                     .lineLimit(1)
-                    .cornerRadius(10)
                 
                 TextField("Amount", value: $amount, format:
                                 .currency(code: Locale.current.currencyCode ?? "GBP"))
                     .keyboardType(.decimalPad)
-                    .cornerRadius(10)
                     .lineLimit(1)
             }
             
