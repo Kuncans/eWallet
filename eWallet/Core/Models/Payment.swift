@@ -110,17 +110,19 @@ struct MockPayment {
     
 }
 
-enum paymentType {
-    case transfer
+enum paymentType: String, CaseIterable, Identifiable {
+    var id: String { self.rawValue }
+    
+    case entertainment
     case internet
     case games
     case travel
     case utilities
     case bills
     case health
-    case personal
+    case transfer
     case food
-    case entertainment
+    case personal
 }
 
 extension paymentType {

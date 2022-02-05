@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PaymentCard: Identifiable {
+struct PaymentCard: Identifiable, Hashable {
     let id = UUID()
     let balance: Double
     let cardNumber: Int

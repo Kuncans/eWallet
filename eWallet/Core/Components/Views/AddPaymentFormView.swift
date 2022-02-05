@@ -9,48 +9,83 @@ import SwiftUI
 
 struct AddPaymentFormView: View {
     
-    @State private var useCurrentTime: Bool = true
+    @State private var useCurrentDateTime: Bool = true
+    @State private var selectedCard: PaymentCard = MockCard.mockPaymentCardList[0]
     
     @State private var toFrom: String = ""
     @State private var amount: Decimal?
     @State private var dateSelected: Date = Date()
     @State private var time: Date = Date()
+    @State private var outgoingPayment: Bool = true
+    @State private var paymentCategory: paymentType = paymentType.entertainment
     
     var body: some View {
         ScrollView {
             VStack (spacing: 16) {
+                
+                Text("Select Payment Card")
+                    .font(.title3)
+                    .padding(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                TabView (selection: $selectedCard) {
+                    ForEach(MockCard.mockPaymentCardList) { card in
+                        PaymentCardView(paymentCard: card).tag(card)
+                    }
+                }
+                .frame(width: 320, height: 230)
+                .tabViewStyle(.page)
+                
                 TextField("Company Name", text: $toFrom)
-                    .font(.title2)
                     .padding(.leading)
                     .lineLimit(1)
-                    .frame(height: 55)
+                    .frame(height: 45)
                     .background(Color(UIColor.secondarySystemBackground))
                     .cornerRadius(10)
                 
-                
-                TextField("Amount", value: $amount, format:
-                    .currency(code: Locale.current.currencyCode ?? "GBP"))
-                    .font(.title2)
-                    .keyboardType(.decimalPad)
-                    .padding(.leading)
-                    .frame(height: 55)
-                    .background(Color(UIColor.secondarySystemBackground))
-                    .cornerRadius(10)
-                
-                Toggle("Use Current Time", isOn: $useCurrentTime.animation(.spring()))
-                
-                if !useCurrentTime {
-                    DatePicker("", selection: $dateSelected, displayedComponents: [.date, .hourAndMinute])
-                        .datePickerStyle(.graphical)
-                        .animation(.easeInOut(duration: 10), value: useCurrentTime)
+                HStack {
+                    TextField("Amount", value: $amount, format:
+                        .currency(code: Locale.current.currencyCode ?? "GBP"))
+                        .keyboardType(.decimalPad)
+                        .padding(.leading)
+                        .frame(height: 45)
+                        .frame(maxWidth: .infinity)
+                        .background(Color(UIColor.secondarySystemBackground))
+                        .cornerRadius(10)
+                        .lineLimit(1)
+                                         
+                        Picker(selection: $paymentCategory) {
+                            ForEach(paymentType.allCases, id: \.self) { category in
+                                Text(category.rawValue.capitalized)
+                            }
+                        } label: {
+                            Text(paymentCategory.rawValue.capitalized)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .frame(minWidth: 100)
+                        .padding(.trailing)
+                        .keyboardType(.decimalPad)
+                        .padding(.leading)
+                        .frame(height: 45)
+                        .foregroundColor(Color(UIColor.systemGray2))
+                        .background(Color(UIColor.secondarySystemBackground))
+                        .cornerRadius(10)
+
 
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text(dateSelected.formatted())
-
+                Toggle("Outgoing Payment", isOn: $outgoingPayment.animation(.spring()))                      .padding(.leading)
                 
+                Toggle("Use Current Date/Time", isOn: $useCurrentDateTime.animation(.spring()))
+                    .padding(.leading)
+                if !useCurrentDateTime {
+                    DatePicker("", selection: $dateSelected, displayedComponents: [.date, .hourAndMinute])
+                        .datePickerStyle(.graphical)
+                        .animation(.easeInOut(duration: 10), value: useCurrentDateTime)
+                }
             }
-            .padding(.horizontal, 32)
+            .padding(.horizontal, 16)
         }
         .padding(.vertical, 32)
     }
