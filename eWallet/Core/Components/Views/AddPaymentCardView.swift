@@ -70,13 +70,15 @@ struct AddPaymentCardView: View {
             }
             
         }
-        .navigationTitle("Add A Payment Card")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("New Payment Card")
+//        .navigationBarTitleDisplayMode(.default)
     }
 }
 
 struct AddPaymentCardView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPaymentCardView()
+        NavigationView {
+            AddPaymentCardView()
+        }
     }
 }

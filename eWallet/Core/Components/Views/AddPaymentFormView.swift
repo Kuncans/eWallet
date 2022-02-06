@@ -22,16 +22,15 @@ struct AddPaymentFormView: View {
     var body: some View {
         
         Form {
-            Section(header: Text("Payment Card")) {
-                TabView (selection: $selectedCard) {
-                    ForEach(MockCard.mockPaymentCardList) { card in
-                        PaymentCardView(paymentCard: card).tag(card)
-                    }
+
+            TabView (selection: $selectedCard) {
+                ForEach(MockCard.mockPaymentCardList) { card in
+                    PaymentCardView(paymentCard: card).tag(card)
                 }
-                .frame(maxWidth: .infinity, alignment: .center)
-                .frame(minHeight: 220)
-                .tabViewStyle(.page)
             }
+            .frame(maxWidth: .infinity, alignment: .center)
+            .frame(minHeight: 220)
+            .tabViewStyle(.page)
             
             Section("Payment Details") {
                 TextField("Company Name", text: $toFrom)
@@ -52,9 +51,7 @@ struct AddPaymentFormView: View {
                     DatePicker("", selection: $dateSelected, displayedComponents: [.date, .hourAndMinute])
                         .datePickerStyle(.graphical)
                 }
-            }
-            
-            Section("Payment Type") {
+                
                 Picker(selection: $paymentCategory) {
                     ForEach(paymentType.allCases, id: \.self) { category in
                         Text(category.rawValue.capitalized)
@@ -72,13 +69,15 @@ struct AddPaymentFormView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }
-        .navigationTitle("Add A Transaction")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("New Transaction")
+        //.navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct AddPaymentFormView_Previews: PreviewProvider {
     static var previews: some View {
-        AddPaymentFormView()
+        NavigationView {
+            AddPaymentFormView()
+        }
     }
 }
