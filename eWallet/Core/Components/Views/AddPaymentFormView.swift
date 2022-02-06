@@ -66,7 +66,7 @@ struct AddPaymentFormView: View {
             }
             
             Button {
-                print(paymentCategory)
+                print("Saved Transaction")
             } label: {
                 Text("Submit Payment")
                     .frame(maxWidth: .infinity, alignment: .center)

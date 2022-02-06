@@ -50,10 +50,23 @@ struct AddPaymentCardView: View {
             Section("Card Personalization") {
                 Picker("Card Color", selection: $newCardColor) {
                     ForEach(cardColor.allCases, id: \.self) { color in
-                        Text(color.rawValue.capitalized)
-                            .gradientForeground(colors: color.color)
+                        HStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .gradientForeground(colors: color.color)
+                                .frame(width: 32, height: 32)
+                                .padding(.trailing, 8)
+                            Text(color.rawValue.capitalized)
+                                .frame(maxWidth: 60, alignment: .leading)
+                        }
                     }
                 }
+            }
+            
+            Button {
+                print("Saved Payment Card")
+            } label: {
+                Text("Save Card")
+                    .frame(maxWidth: .infinity, alignment: .center)
             }
             
         }
