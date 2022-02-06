@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct HomeView: View {
     
     @State private var emptyCardList: Bool = false

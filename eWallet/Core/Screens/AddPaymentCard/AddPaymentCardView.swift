@@ -38,10 +38,12 @@ struct AddPaymentCardView: View {
                         if filtered != newValue {
                             self.cardNumber = filtered
                         }
-                        if filtered.count == 17 {
+                        if filtered.count >= 17 {
                             self.cardNumber = String(String(filtered).prefix(16))
                         }
                     }
+                
+               //NumberEntryLimitSizeField(boundNumber: $cardNumber, textPlaceholder: "Card Number", numberLimit: 17)
                 
                 TextField("Expiry Day", text: $expiryDay)
                 
