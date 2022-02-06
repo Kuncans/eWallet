@@ -89,7 +89,7 @@
 				95A7B7FE27AF3AA2001FEDA4 /* Extensions */,
 				9530F36927AC2C7600F2F416 /* Models */,
 				9530F36227AC20BF00F2F416 /* Components */,
-				9530F35F27AC201600F2F416 /* HomeView */,
+				95A7B80127AFE86D001FEDA4 /* Screens */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -116,8 +116,6 @@
 				9530F36727AC20EB00F2F416 /* PaymentCardView.swift */,
 				952E126227AD7EFC00A3719E /* EmptyPaymentCardView.swift */,
 				959CCEDE27AD924700A0C10D /* PaymentCellView.swift */,
-				95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */,
-				95A7B7FC27AF2D4B001FEDA4 /* AddPaymentCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +135,32 @@
 				95A7B7FF27AF3AB3001FEDA4 /* View+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95A7B80127AFE86D001FEDA4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				95A7B80327AFE885001FEDA4 /* AddPaymentForm */,
+				95A7B80227AFE878001FEDA4 /* AddPaymentCard */,
+				9530F35F27AC201600F2F416 /* HomeView */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		95A7B80227AFE878001FEDA4 /* AddPaymentCard */ = {
+			isa = PBXGroup;
+			children = (
+				95A7B7FC27AF2D4B001FEDA4 /* AddPaymentCardView.swift */,
+			);
+			path = AddPaymentCard;
+			sourceTree = "<group>";
+		};
+		95A7B80327AFE885001FEDA4 /* AddPaymentForm */ = {
+			isa = PBXGroup;
+			children = (
+				95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */,
+			);
+			path = AddPaymentForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
