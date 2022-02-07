@@ -123,6 +123,8 @@ enum paymentType: String, CaseIterable, Identifiable {
     case transfer
     case food
     case personal
+    case technology
+    case other
 }
 
 extension paymentType {
@@ -132,23 +134,27 @@ extension paymentType {
         case .transfer:
             return .teal
         case .internet:
-            return .pink
+            return .indigo
         case .games:
-            return .red
+            return .orange
         case .travel:
             return .blue
         case .utilities:
             return .purple
         case .bills:
-            return .orange
-        case .health:
             return .green
+        case .health:
+            return .red
         case .personal:
             return .cyan
         case .food:
             return .yellow
         case .entertainment:
             return .pink
+        case .technology:
+            return .pink
+        case .other:
+            return .mint
         }
     }
     
@@ -175,6 +181,10 @@ extension paymentType {
             return "cart.fill"
         case .entertainment:
             return "tv.fill"
+        case .technology:
+            return "keyboard.fill"
+        case .other:
+            return "ellipsis"
         }
         
     }

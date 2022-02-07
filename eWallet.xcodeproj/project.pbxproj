@@ -20,6 +20,8 @@
 		95A7B7FD27AF2D4B001FEDA4 /* AddPaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7FC27AF2D4B001FEDA4 /* AddPaymentCardView.swift */; };
 		95A7B80027AF3AB3001FEDA4 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7FF27AF3AB3001FEDA4 /* View+Ext.swift */; };
 		95A7B80727AFED67001FEDA4 /* NumberEntryLimitSizeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B80627AFED67001FEDA4 /* NumberEntryLimitSizeField.swift */; };
+		95A7B80927B15189001FEDA4 /* CategoryIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B80827B15189001FEDA4 /* CategoryIconView.swift */; };
+		95A7B80B27B15421001FEDA4 /* CategoryIconGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B80A27B15421001FEDA4 /* CategoryIconGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		95A7B7FC27AF2D4B001FEDA4 /* AddPaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentCardView.swift; sourceTree = "<group>"; };
 		95A7B7FF27AF3AB3001FEDA4 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		95A7B80627AFED67001FEDA4 /* NumberEntryLimitSizeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberEntryLimitSizeField.swift; sourceTree = "<group>"; };
+		95A7B80827B15189001FEDA4 /* CategoryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconView.swift; sourceTree = "<group>"; };
+		95A7B80A27B15421001FEDA4 /* CategoryIconGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 				952E126227AD7EFC00A3719E /* EmptyPaymentCardView.swift */,
 				959CCEDE27AD924700A0C10D /* PaymentCellView.swift */,
 				95A7B80627AFED67001FEDA4 /* NumberEntryLimitSizeField.swift */,
+				95A7B80827B15189001FEDA4 /* CategoryIconView.swift */,
+				95A7B80A27B15421001FEDA4 /* CategoryIconGridView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 				9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */,
 				95A7B7FB27AE1819001FEDA4 /* AddPaymentFormView.swift in Sources */,
 				95A7B80027AF3AB3001FEDA4 /* View+Ext.swift in Sources */,
+				95A7B80B27B15421001FEDA4 /* CategoryIconGridView.swift in Sources */,
 				9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */,
 				9530F35127AC1FE600F2F416 /* eWalletApp.swift in Sources */,
 				959CCEDF27AD924700A0C10D /* PaymentCellView.swift in Sources */,
@@ -247,6 +254,7 @@
 				959CCEDD27AD8C9E00A0C10D /* Payment.swift in Sources */,
 				95A7B7FD27AF2D4B001FEDA4 /* AddPaymentCardView.swift in Sources */,
 				9530F36127AC202100F2F416 /* HomeView.swift in Sources */,
+				95A7B80927B15189001FEDA4 /* CategoryIconView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

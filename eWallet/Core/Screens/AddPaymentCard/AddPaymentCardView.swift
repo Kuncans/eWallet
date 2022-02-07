@@ -22,7 +22,7 @@ struct AddPaymentCardView: View {
         
         Form {
             
-            Section("Balance") {
+            Section("Starting Balance") {
                 
                 TextField("Current Balance", value: $balance, format:
                     .currency(code: Locale.current.currencyCode ?? "GBP"))
@@ -46,8 +46,28 @@ struct AddPaymentCardView: View {
                //NumberEntryLimitSizeField(boundNumber: $cardNumber, textPlaceholder: "Card Number", numberLimit: 17)
                 
                 TextField("Expiry Day", text: $expiryDay)
+                    .keyboardType(.numberPad)
+                    .onReceive(Just(expiryDay)) { newValue in
+                        let filtered = newValue.filter { "0123456789".contains($0) }
+                        if filtered != newValue {
+                            self.expiryDay = filtered
+                        }
+                        if filtered.count >= 3 {
+                            self.expiryDay = String(String(filtered).prefix(2))
+                        }
+                    }
                 
                 TextField("Expiry Month", text: $expiryMonth)
+                    .keyboardType(.numberPad)
+                    .onReceive(Just(expiryMonth)) { newValue in
+                        let filtered = newValue.filter { "0123456789".contains($0) }
+                        if filtered != newValue {
+                            self.expiryMonth = filtered
+                        }
+                        if filtered.count >= 3 {
+                            self.expiryMonth = String(String(filtered).prefix(2))
+                        }
+                    }
                 
                 Picker("Card Color", selection: $newCardType) {
                     ForEach(cardType.allCases, id: \.self) { type in
