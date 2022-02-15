@@ -9,6 +9,14 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
     
+    @Published var savedCards: [PaymentCard] = []
     
+    private let coreDS = CoreDataService.shared
+    
+    init() {
+        savedCards = coreDS.getCards()
+    }
     
 }
+
+

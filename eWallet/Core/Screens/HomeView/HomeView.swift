@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @StateObject var vm: HomeViewModel
     @State private var emptyCardList: Bool = false
     
     var body: some View {
@@ -40,7 +41,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(vm: HomeViewModel())
     }
 }
 

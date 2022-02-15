@@ -7,16 +7,22 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
-class CoreDataService: ObservableObject {
+class CoreDataService {
+    
+    static let shared = CoreDataService()
     
     private let container: NSPersistentContainer
     private let containerName: String = "EWalletContainer"
     private let entityName: String = "CardEntity"
     
-    @Published var savedCards: [CardEntity] = []
+    private var savedCards: [CardEntity] = []
     
-    init() {
+    private init() {
+        
+        ValueTransformer.setValueTransformer(UIColorTransformer(), forName: NSValueTransformerName("UIColorTransformer"))
+        
         container = NSPersistentContainer(name: containerName)
         container.loadPersistentStores { _, error in
             if let error = error {
@@ -25,7 +31,13 @@ class CoreDataService: ObservableObject {
         }
     }
     
-    func updateCard(card: PaymentCard) {
+    public func getCards() -> [PaymentCard] {
+        return mapCardEntityToModel(savedCards: savedCards)
+    }
+    
+
+    
+    public func updateCard(card: PaymentCard) {
         if let entity = savedCards.first(where: { $0.cardID == card.id }) {
             update(entity: entity, card: card)
         }
@@ -39,8 +51,22 @@ class CoreDataService: ObservableObject {
             print("Error fetching saved Cards \(error)")
         }
     }
+    private func mapCardEntityToModel(savedCards: [CardEntity]) -> [PaymentCard] {
+        
+        var updatedCards: [PaymentCard] = []
+        
+        savedCards.forEach { card in
+            do {
+                try updatedCards.append(mapToCardModel(card: card))
+            } catch let error {
+                print("Could not convert to card model \(error).")
+            }
+        }
+        
+        return updatedCards
+    }
     
-    private func add(card: PaymentCard) {
+    func add(card: PaymentCard) {
         let entity = CardEntity(context: container.viewContext)
         entity.balance = card.balance
         entity.cardID = card.id
@@ -51,7 +77,7 @@ class CoreDataService: ObservableObject {
         entity.cardColor = card.cardColor
     }
     
-    private func update(entity: CardEntity, card: PaymentCard) {
+    func update(entity: CardEntity, card: PaymentCard) {
         entity.balance = card.balance
         entity.cardID = card.id
         entity.cardNumber = Int32(card.cardNumber)
@@ -61,7 +87,7 @@ class CoreDataService: ObservableObject {
         entity.cardColor = card.cardColor
     }
     
-    private func save() {
+    func save() {
         do {
             try container.viewContext.save()
         } catch let error {
@@ -69,8 +95,19 @@ class CoreDataService: ObservableObject {
         }
     }
     
-    private func remove(entity: CardEntity) {
+    func remove(entity: CardEntity) {
         container.viewContext.delete(entity)
     }
     
+    private func mapToCardModel(card: CardEntity) throws -> PaymentCard {
+        
+        return PaymentCard(balance: card.balance,
+                    cardNumber: Int(card.cardNumber),
+                    expiry: DateComponents(month: Int(card.expiryString?.prefix(2) ?? ""), day: Int(card.expiryString?.suffix(2) ?? "")),
+                    cardType: cardType(rawValue: card.cardTypeAsString) ?? cardType.visa,
+                    cardHolder: card.cardHolder ?? "Unknown",
+                    cardColor: card.cardColor ?? UIColor(.blue))
+    }
+    
 }
+

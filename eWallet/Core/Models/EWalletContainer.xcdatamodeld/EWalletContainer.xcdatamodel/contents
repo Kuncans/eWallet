@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CardEntity" representedClassName="CardEntity" syncable="YES">
         <attribute name="balance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="cardColor" attributeType="Transformable" customClassName="UIColor"/>
+        <attribute name="cardColor" attributeType="Transformable" valueTransformerName="UIColorTransformer" customClassName="UIColor"/>
         <attribute name="cardHolder" attributeType="String"/>
         <attribute name="cardID" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="cardNumber" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
