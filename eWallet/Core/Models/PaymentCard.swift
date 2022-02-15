@@ -15,7 +15,7 @@ struct PaymentCard: Identifiable, Hashable {
     let expiry: DateComponents
     let cardType: cardType
     let cardHolder: String
-    let cardColor: cardColor
+    let cardColor: UIColor
     var hiddenCard: String.SubSequence {
         let oldString = String(cardNumber)
         let newString = oldString.prefix(4) + " **** **** " + oldString.suffix(4)
@@ -96,38 +96,4 @@ enum cardType: String, CaseIterable, Identifiable {
     case visa
     case amex
     case mastercard
-}
-
-enum cardColor: String, CaseIterable, Identifiable {
-    
-    var id: String { self.rawValue }
-
-    case blue
-    case purple
-    case red
-    case green
-    case black
-    case orange
-
-}
-
-extension cardColor {
-    
-    var color: [Color] {
-        
-        switch (self) {
-        case .blue:
-            return [.blue, .teal]
-        case .purple:
-            return [.purple, .indigo]
-        case .red:
-            return [.red, .pink]
-        case .green:
-            return [.green, .mint]
-        case .black:
-            return [.black, .gray]
-        case .orange:
-            return [.orange, .brown]
-        }
-    }
 }

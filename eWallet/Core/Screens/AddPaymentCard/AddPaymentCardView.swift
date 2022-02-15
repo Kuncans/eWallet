@@ -16,7 +16,7 @@ struct AddPaymentCardView: View {
     @State private var expiryMonth: String = ""
     @State private var newCardType: cardType = .visa
     @State private var cardHolderName: String = ""
-    @State private var newCardColor: cardColor = .blue
+    @State private var newCardColor: Color = .blue
     
     var body: some View {
         
@@ -81,18 +81,7 @@ struct AddPaymentCardView: View {
             }
             
             Section("Card Personalization") {
-                Picker("Card Color", selection: $newCardColor) {
-                    ForEach(cardColor.allCases, id: \.self) { color in
-                        HStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .gradientForeground(colors: color.color)
-                                .frame(width: 32, height: 32)
-                                .padding(.trailing, 8)
-                            Text(color.rawValue.capitalized)
-                                .frame(maxWidth: 60, alignment: .leading)
-                        }
-                    }
-                }
+                ColorPicker("Card Color", selection: $newCardColor)
             }
             
             Button {

@@ -6,7 +6,7 @@
         <attribute name="cardHolder" attributeType="String"/>
         <attribute name="cardID" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="cardNumber" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="cardTypeAsInt" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" customClassName="cardType"/>
+        <attribute name="cardTypeAsString" attributeType="String" customClassName="cardType"/>
         <attribute name="expiryString" attributeType="String"/>
         <relationship name="transaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TransactionEntity" inverseName="card" inverseEntity="TransactionEntity"/>
     </entity>
