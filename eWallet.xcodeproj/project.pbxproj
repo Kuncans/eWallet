@@ -14,6 +14,9 @@
 		9530F36127AC202100F2F416 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36027AC202100F2F416 /* HomeView.swift */; };
 		9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36727AC20EB00F2F416 /* PaymentCardView.swift */; };
 		9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36A27AC2C9400F2F416 /* PaymentCard.swift */; };
+		95915F5927BC041F006199BE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95915F5827BC041F006199BE /* HomeViewModel.swift */; };
+		95915F5C27BC046D006199BE /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95915F5B27BC046D006199BE /* CoreDataService.swift */; };
+		95915F5F27BC04C9006199BE /* EWalletContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95915F5D27BC04C9006199BE /* EWalletContainer.xcdatamodeld */; };
 		959CCEDD27AD8C9E00A0C10D /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959CCEDC27AD8C9E00A0C10D /* Payment.swift */; };
 		959CCEDF27AD924700A0C10D /* PaymentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959CCEDE27AD924700A0C10D /* PaymentCellView.swift */; };
 		95A7B7FB27AE1819001FEDA4 /* AddPaymentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */; };
@@ -22,6 +25,11 @@
 		95A7B80727AFED67001FEDA4 /* NumberEntryLimitSizeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B80627AFED67001FEDA4 /* NumberEntryLimitSizeField.swift */; };
 		95A7B80927B15189001FEDA4 /* CategoryIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B80827B15189001FEDA4 /* CategoryIconView.swift */; };
 		95A7B80B27B15421001FEDA4 /* CategoryIconGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7B80A27B15421001FEDA4 /* CategoryIconGridView.swift */; };
+		95D1537E27BC0C42001CB22B /* CardEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1537A27BC0C42001CB22B /* CardEntity+CoreDataClass.swift */; };
+		95D1537F27BC0C42001CB22B /* CardEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1537B27BC0C42001CB22B /* CardEntity+CoreDataProperties.swift */; };
+		95D1538027BC0C42001CB22B /* TransactionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1537C27BC0C42001CB22B /* TransactionEntity+CoreDataClass.swift */; };
+		95D1538127BC0C42001CB22B /* TransactionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1537D27BC0C42001CB22B /* TransactionEntity+CoreDataProperties.swift */; };
+		95D1538427BC0C90001CB22B /* UIColorTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1538327BC0C90001CB22B /* UIColorTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +41,9 @@
 		9530F36027AC202100F2F416 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9530F36727AC20EB00F2F416 /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
 		9530F36A27AC2C9400F2F416 /* PaymentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCard.swift; sourceTree = "<group>"; };
+		95915F5827BC041F006199BE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		95915F5B27BC046D006199BE /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		95915F5E27BC04C9006199BE /* EWalletContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EWalletContainer.xcdatamodel; sourceTree = "<group>"; };
 		959CCEDC27AD8C9E00A0C10D /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		959CCEDE27AD924700A0C10D /* PaymentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCellView.swift; sourceTree = "<group>"; };
 		95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentFormView.swift; sourceTree = "<group>"; };
@@ -41,6 +52,11 @@
 		95A7B80627AFED67001FEDA4 /* NumberEntryLimitSizeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberEntryLimitSizeField.swift; sourceTree = "<group>"; };
 		95A7B80827B15189001FEDA4 /* CategoryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconView.swift; sourceTree = "<group>"; };
 		95A7B80A27B15421001FEDA4 /* CategoryIconGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconGridView.swift; sourceTree = "<group>"; };
+		95D1537A27BC0C42001CB22B /* CardEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		95D1537B27BC0C42001CB22B /* CardEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		95D1537C27BC0C42001CB22B /* TransactionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		95D1537D27BC0C42001CB22B /* TransactionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		95D1538327BC0C90001CB22B /* UIColorTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +89,8 @@
 		9530F34F27AC1FE600F2F416 /* eWallet */ = {
 			isa = PBXGroup;
 			children = (
+				95D1538227BC0C82001CB22B /* Transformer */,
+				95915F6827BC0971006199BE /* CoreData */,
 				9530F35E27AC200800F2F416 /* Core */,
 				9530F35027AC1FE600F2F416 /* eWalletApp.swift */,
 				9530F35427AC1FE600F2F416 /* Assets.xcassets */,
@@ -93,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				95A7B7FE27AF3AA2001FEDA4 /* Extensions */,
+				95915F5A27BC0446006199BE /* Services */,
 				9530F36927AC2C7600F2F416 /* Models */,
 				9530F36227AC20BF00F2F416 /* Components */,
 				95A7B80127AFE86D001FEDA4 /* Screens */,
@@ -104,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				9530F36027AC202100F2F416 /* HomeView.swift */,
+				95915F5827BC041F006199BE /* HomeViewModel.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -134,8 +154,28 @@
 			children = (
 				9530F36A27AC2C9400F2F416 /* PaymentCard.swift */,
 				959CCEDC27AD8C9E00A0C10D /* Payment.swift */,
+				95915F5D27BC04C9006199BE /* EWalletContainer.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		95915F5A27BC0446006199BE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				95915F5B27BC046D006199BE /* CoreDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		95915F6827BC0971006199BE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				95D1537A27BC0C42001CB22B /* CardEntity+CoreDataClass.swift */,
+				95D1537B27BC0C42001CB22B /* CardEntity+CoreDataProperties.swift */,
+				95D1537C27BC0C42001CB22B /* TransactionEntity+CoreDataClass.swift */,
+				95D1537D27BC0C42001CB22B /* TransactionEntity+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		95A7B7FE27AF3AA2001FEDA4 /* Extensions */ = {
@@ -170,6 +210,14 @@
 				95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */,
 			);
 			path = AddPaymentForm;
+			sourceTree = "<group>";
+		};
+		95D1538227BC0C82001CB22B /* Transformer */ = {
+			isa = PBXGroup;
+			children = (
+				95D1538327BC0C90001CB22B /* UIColorTransformer.swift */,
+			);
+			path = Transformer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,19 +290,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D1538427BC0C90001CB22B /* UIColorTransformer.swift in Sources */,
+				95D1537F27BC0C42001CB22B /* CardEntity+CoreDataProperties.swift in Sources */,
 				9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */,
+				95D1537E27BC0C42001CB22B /* CardEntity+CoreDataClass.swift in Sources */,
 				95A7B7FB27AE1819001FEDA4 /* AddPaymentFormView.swift in Sources */,
 				95A7B80027AF3AB3001FEDA4 /* View+Ext.swift in Sources */,
 				95A7B80B27B15421001FEDA4 /* CategoryIconGridView.swift in Sources */,
 				9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */,
 				9530F35127AC1FE600F2F416 /* eWalletApp.swift in Sources */,
+				95915F5F27BC04C9006199BE /* EWalletContainer.xcdatamodeld in Sources */,
 				959CCEDF27AD924700A0C10D /* PaymentCellView.swift in Sources */,
+				95D1538027BC0C42001CB22B /* TransactionEntity+CoreDataClass.swift in Sources */,
+				95915F5C27BC046D006199BE /* CoreDataService.swift in Sources */,
 				952E126327AD7EFC00A3719E /* EmptyPaymentCardView.swift in Sources */,
 				95A7B80727AFED67001FEDA4 /* NumberEntryLimitSizeField.swift in Sources */,
+				95915F5927BC041F006199BE /* HomeViewModel.swift in Sources */,
 				959CCEDD27AD8C9E00A0C10D /* Payment.swift in Sources */,
 				95A7B7FD27AF2D4B001FEDA4 /* AddPaymentCardView.swift in Sources */,
 				9530F36127AC202100F2F416 /* HomeView.swift in Sources */,
 				95A7B80927B15189001FEDA4 /* CategoryIconView.swift in Sources */,
+				95D1538127BC0C42001CB22B /* TransactionEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +515,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		95915F5D27BC04C9006199BE /* EWalletContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				95915F5E27BC04C9006199BE /* EWalletContainer.xcdatamodel */,
+			);
+			currentVersion = 95915F5E27BC04C9006199BE /* EWalletContainer.xcdatamodel */;
+			path = EWalletContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9530F34527AC1FE600F2F416 /* Project object */;
 }

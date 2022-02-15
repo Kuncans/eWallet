@@ -21,6 +21,9 @@ struct PaymentCard: Identifiable, Hashable {
         let newString = oldString.prefix(4) + " **** **** " + oldString.suffix(4)
         return newString
     }
+    var expiryString: String {
+        return "\(expiry.month ?? 0)/\(expiry.year ?? 0)"
+    }
 }
 
 struct MockCard {
