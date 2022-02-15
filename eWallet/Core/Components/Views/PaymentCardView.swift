@@ -146,6 +146,7 @@ extension PaymentCardView {
                 Text("\(paymentCard.expiry.month ?? 0) / \(paymentCard.expiry.day ?? 0)")
                     .bold()
                     .frame(maxWidth: 50, alignment: .leading)
+                    .lineLimit(1)
                 
             }
         }

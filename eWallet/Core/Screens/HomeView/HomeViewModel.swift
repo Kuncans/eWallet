@@ -6,15 +6,23 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class HomeViewModel: ObservableObject {
     
     @Published var savedCards: [PaymentCard] = []
     
-    private let coreDS = CoreDataService.shared
+    let coreDS: CoreDataService
     
     init() {
-        savedCards = coreDS.getCards()
+        coreDS = CoreDataService.shared
+    }
+    
+    func getCards() {
+        DispatchQueue.main.async {
+            self.savedCards = self.coreDS.getCards()
+            print("Saved Cards: \(self.savedCards)")
+        }
     }
     
 }

@@ -9,39 +9,56 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var vm: HomeViewModel
+    @StateObject private var vm = HomeViewModel()
     @State private var emptyCardList: Bool = false
+    @State private var presentSheet: Bool = false
     
     var body: some View {
         
-        VStack {
-            if !emptyCardList {
-                cardScrollView
-            }
-            
-            if emptyCardList {
-                Button {
-                    print("add new card")
-                } label: {
-                    EmptyPaymentCardView()
+        ZStack {
+            VStack {
+                if !emptyCardList {
+                    cardScrollView
                 }
+                
+                if emptyCardList {
+                    Button {
+                        print("add new card")
+                    } label: {
+                        EmptyPaymentCardView()
+                    }
 
-            }
-            
-            ScrollView (.vertical) {
-                ForEach(MockPayment.mockPaymentList) { payment in
-                    PaymentCellView(payment: payment)
                 }
+                Button {
+                    presentSheet.toggle()
+                } label: {
+                    Text("Add Card")
+                }
+                
+                ScrollView (.vertical) {
+                    ForEach(MockPayment.mockPaymentList) { payment in
+                        PaymentCellView(payment: payment)
+                    }
+                }
+                .padding(.horizontal)
+        
             }
-            .padding(.horizontal)
-            
+            .sheet(isPresented: $presentSheet, onDismiss: {
+                vm.getCards()
+            }, content: {
+                AddPaymentCardView()
+            })
+            .onAppear {
+                vm.getCards()
+            }
         }
+    
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(vm: HomeViewModel())
+        HomeView()
     }
 }
 
@@ -55,12 +72,9 @@ extension HomeView  {
                 
                 LazyVGrid (columns: column) {
                     HStack(alignment: .center) {
-                        ForEach(MockCard.mockPaymentCardList) { card in
+                        ForEach(vm.savedCards) { card in
                             PaymentCardView(paymentCard: card)
                                 .frame(minWidth: geometry.size.width)
-                                .onTapGesture {
-                                    //TODO: Add Card Modal/Sheet
-                            }
                         }
                     }
                 }

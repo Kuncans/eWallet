@@ -30,6 +30,7 @@
 		95D1538027BC0C42001CB22B /* TransactionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1537C27BC0C42001CB22B /* TransactionEntity+CoreDataClass.swift */; };
 		95D1538127BC0C42001CB22B /* TransactionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1537D27BC0C42001CB22B /* TransactionEntity+CoreDataProperties.swift */; };
 		95D1538427BC0C90001CB22B /* UIColorTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1538327BC0C90001CB22B /* UIColorTransformer.swift */; };
+		95D1538627BC2575001CB22B /* AddPaymentCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1538527BC2575001CB22B /* AddPaymentCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		95D1537C27BC0C42001CB22B /* TransactionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95D1537D27BC0C42001CB22B /* TransactionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95D1538327BC0C90001CB22B /* UIColorTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTransformer.swift; sourceTree = "<group>"; };
+		95D1538527BC2575001CB22B /* AddPaymentCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				95A7B7FC27AF2D4B001FEDA4 /* AddPaymentCardView.swift */,
+				95D1538527BC2575001CB22B /* AddPaymentCardViewModel.swift */,
 			);
 			path = AddPaymentCard;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				95A7B7FB27AE1819001FEDA4 /* AddPaymentFormView.swift in Sources */,
 				95A7B80027AF3AB3001FEDA4 /* View+Ext.swift in Sources */,
 				95A7B80B27B15421001FEDA4 /* CategoryIconGridView.swift in Sources */,
+				95D1538627BC2575001CB22B /* AddPaymentCardViewModel.swift in Sources */,
 				9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */,
 				9530F35127AC1FE600F2F416 /* eWalletApp.swift in Sources */,
 				95915F5F27BC04C9006199BE /* EWalletContainer.xcdatamodeld in Sources */,

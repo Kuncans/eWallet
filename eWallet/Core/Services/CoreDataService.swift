@@ -13,7 +13,7 @@ class CoreDataService {
     
     static let shared = CoreDataService()
     
-    private let container: NSPersistentContainer
+    let container: NSPersistentContainer
     private let containerName: String = "EWalletContainer"
     private let entityName: String = "CardEntity"
     
@@ -29,6 +29,7 @@ class CoreDataService {
                 print("Error loading Core Data \(error)")
             }
         }
+        getSavedCards()
     }
     
     public func getCards() -> [PaymentCard] {
@@ -70,17 +71,18 @@ class CoreDataService {
         let entity = CardEntity(context: container.viewContext)
         entity.balance = card.balance
         entity.cardID = card.id
-        entity.cardNumber = Int32(card.cardNumber)
+        entity.cardNumber = Int64(card.cardNumber)
         entity.expiryString = card.expiryString
         entity.cardTypeAsString = card.cardType.id
         entity.cardHolder = card.cardHolder
         entity.cardColor = card.cardColor
+        
     }
     
     func update(entity: CardEntity, card: PaymentCard) {
         entity.balance = card.balance
         entity.cardID = card.id
-        entity.cardNumber = Int32(card.cardNumber)
+        entity.cardNumber = Int64(card.cardNumber)
         entity.expiryString = card.expiryString
         entity.cardTypeAsString = card.cardType.id
         entity.cardHolder = card.cardHolder
@@ -93,6 +95,8 @@ class CoreDataService {
         } catch let error {
             print("Error saving to Core Data \(error)")
         }
+        
+        getSavedCards()
     }
     
     func remove(entity: CardEntity) {

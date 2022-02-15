@@ -20,7 +20,7 @@ extension CardEntity {
     @NSManaged public var cardColor: UIColor?
     @NSManaged public var cardHolder: String?
     @NSManaged public var cardID: UUID?
-    @NSManaged public var cardNumber: Int32
+    @NSManaged public var cardNumber: Int64
     @NSManaged public var cardTypeAsString: String
     @NSManaged public var expiryString: String?
     @NSManaged public var transaction: NSSet?

@@ -12,7 +12,7 @@ struct eWalletApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                CategoryIconGridView()
+                HomeView()
             }
         }
     }
