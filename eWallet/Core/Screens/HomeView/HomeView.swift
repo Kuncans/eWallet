@@ -31,11 +31,6 @@ struct HomeView: View {
                     }
 
                 }
-                Button {
-                    presentSheet.toggle()
-                } label: {
-                    Text("Add Card")
-                }
                 
                 ScrollView (.vertical) {
                     ForEach(MockPayment.mockPaymentList) { payment in
@@ -56,14 +51,53 @@ struct HomeView: View {
             vm.getCards()
             vm.checkEmptyList()
         }
-        .navigationBarHidden(true)
-        
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                HStack {
+                    
+                    Image("Profile")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 44, height: 44)
+                        .clipShape(Circle())
+                        .padding(.horizontal, 8)
+                    
+                    VStack (alignment: .leading) {
+                        Text("Good day,")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        
+                        Text("Duncan Kent")
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                    }
+                  
+                }
+                .padding(.top, 56)
+            }
+
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                
+                Button {
+                    presentSheet = true
+                } label: {
+                    AddButtonView()
+                }
+                .padding(.top, 56   )
+
+
+            }
+        }
+        //.navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        NavigationView {
+            HomeView()
+        }
     }
 }
 
