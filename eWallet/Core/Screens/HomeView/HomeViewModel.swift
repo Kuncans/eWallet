@@ -17,6 +17,7 @@ final class HomeViewModel: ObservableObject {
     
     init() {
         coreDS = CoreDataService.shared
+        getCards()
     }
     
     func getCards() {

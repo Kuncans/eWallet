@@ -12,8 +12,7 @@ struct HomeView: View {
     @StateObject private var vm = HomeViewModel()
     @State private var presentSheet: Bool = false
     @State private var selectedCard: PaymentCard = MockCard.mockPaymentCard
-
-    
+        
     var body: some View {
         
         ZStack {
@@ -51,6 +50,7 @@ struct HomeView: View {
             }
             .sheet(isPresented: $presentSheet, onDismiss: {
                 vm.getCards()
+                updateSelectedCard()
             }, content: {
                 NavigationView {
                     AddPaymentCardView()
@@ -59,8 +59,8 @@ struct HomeView: View {
 
         }
         .onAppear {
-            vm.getCards()
             vm.checkEmptyList()
+            updateSelectedCard()
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -98,6 +98,15 @@ struct HomeView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        
+    }
+    
+    func updateSelectedCard() {
+        DispatchQueue.main.async {
+            if let card = vm.savedCards.first {
+                selectedCard = card
+            }
+        }
     }
 }
 
@@ -110,24 +119,6 @@ struct HomeView_Previews: PreviewProvider {
 }
 
 extension HomeView  {
-//    private var cardScrollView: some View {
-//
-//        let column: [GridItem] = [GridItem()]
-//
-//        return GeometryReader { geometry in
-//            ScrollView(.horizontal, showsIndicators: false) {
-//
-//                LazyVGrid (columns: column) {
-//                    HStack(alignment: .center) {
-//                        ForEach(vm.savedCards) { card in
-//                            PaymentCardView(paymentCard: card)
-//                                .frame(minWidth: geometry.size.width)
-//                        }
-//                    }
-//                }
-//            }
-//        }.frame(maxHeight: 220)
-//    }
     
     private var cardScrollView: some View {
         TabView (selection: $selectedCard) {
@@ -138,5 +129,8 @@ extension HomeView  {
         .frame(maxWidth: .infinity, alignment: .center)
         .frame(maxHeight: 220)
         .tabViewStyle(.page)
+        .onTapGesture {
+            print("\(String(describing: selectedCard)))")
+        }
     }
 }
