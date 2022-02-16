@@ -52,6 +52,7 @@ class CoreDataService {
             print("Error fetching saved Cards \(error)")
         }
     }
+    
     private func mapCardEntityToModel(savedCards: [CardEntity]) -> [PaymentCard] {
         
         var updatedCards: [PaymentCard] = []
@@ -77,6 +78,8 @@ class CoreDataService {
         entity.cardHolder = card.cardHolder
         entity.cardColor = card.cardColor
         
+        save()
+        
     }
     
     func update(entity: CardEntity, card: PaymentCard) {
@@ -87,20 +90,29 @@ class CoreDataService {
         entity.cardTypeAsString = card.cardType.id
         entity.cardHolder = card.cardHolder
         entity.cardColor = card.cardColor
+        
+        save()
     }
     
     func save() {
         do {
             try container.viewContext.save()
         } catch let error {
+            container.viewContext.rollback()
             print("Error saving to Core Data \(error)")
         }
         
         getSavedCards()
     }
     
-    func remove(entity: CardEntity) {
-        container.viewContext.delete(entity)
+    func remove(card: PaymentCard) {
+        
+        if let entity = savedCards.first(where: { $0.cardID == card.id }) {
+            
+            container.viewContext.delete(entity)
+            
+            save()
+        }
     }
     
     private func mapToCardModel(card: CardEntity) throws -> PaymentCard {

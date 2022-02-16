@@ -32,15 +32,6 @@ final class AddPaymentCardViewModel: ObservableObject {
                                cardHolder: cardHolderName,
                                cardColor: UIColor(newCardColor))
         
-//        let card = CardEntity(context: coreDS.container.viewContext)
-//        card.balance = balance
-//        card.cardColor = UIColor(newCardColor)
-//        card.cardNumber = Int32(cardNumber) ?? 0
-//        card.cardID = UUID()
-//        card.cardTypeAsString = newCardType.rawValue
-//        card.expiryString = "\(expiryMonth)/\(expiryYear)"
-//        card.cardHolder = cardHolderName
-        
         coreDS.add(card: card)
         coreDS.save()
     }

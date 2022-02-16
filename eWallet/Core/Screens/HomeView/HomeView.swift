@@ -10,20 +10,22 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject private var vm = HomeViewModel()
-    @State private var emptyCardList: Bool = false
     @State private var presentSheet: Bool = false
+    @State private var selectedCard: PaymentCard = MockCard.mockPaymentCard
+
     
     var body: some View {
         
         ZStack {
             VStack {
-                if !emptyCardList {
+                
+                if !vm.emptyCardList {
                     cardScrollView
                 }
                 
-                if emptyCardList {
+                if vm.emptyCardList {
                     Button {
-                        print("add new card")
+                        presentSheet = true
                     } label: {
                         EmptyPaymentCardView()
                     }
@@ -48,11 +50,14 @@ struct HomeView: View {
             }, content: {
                 AddPaymentCardView()
             })
-            .onAppear {
-                vm.getCards()
-            }
+
         }
-    
+        .onAppear {
+            vm.getCards()
+            vm.checkEmptyList()
+        }
+        .navigationBarHidden(true)
+        
     }
 }
 
@@ -63,22 +68,33 @@ struct HomeView_Previews: PreviewProvider {
 }
 
 extension HomeView  {
+//    private var cardScrollView: some View {
+//
+//        let column: [GridItem] = [GridItem()]
+//
+//        return GeometryReader { geometry in
+//            ScrollView(.horizontal, showsIndicators: false) {
+//
+//                LazyVGrid (columns: column) {
+//                    HStack(alignment: .center) {
+//                        ForEach(vm.savedCards) { card in
+//                            PaymentCardView(paymentCard: card)
+//                                .frame(minWidth: geometry.size.width)
+//                        }
+//                    }
+//                }
+//            }
+//        }.frame(maxHeight: 220)
+//    }
+    
     private var cardScrollView: some View {
-        
-        let column: [GridItem] = [GridItem()]
-
-        return GeometryReader { geometry in
-            ScrollView(.horizontal, showsIndicators: false) {
-                
-                LazyVGrid (columns: column) {
-                    HStack(alignment: .center) {
-                        ForEach(vm.savedCards) { card in
-                            PaymentCardView(paymentCard: card)
-                                .frame(minWidth: geometry.size.width)
-                        }
-                    }
-                }
+        TabView (selection: $selectedCard) {
+            ForEach(vm.savedCards) { card in
+                PaymentCardView(paymentCard: card).tag(card)
             }
-        }.frame(maxHeight: 220)
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+        .frame(maxHeight: 220)
+        .tabViewStyle(.page)
     }
 }

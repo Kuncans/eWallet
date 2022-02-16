@@ -11,6 +11,7 @@ import SwiftUI
 final class HomeViewModel: ObservableObject {
     
     @Published var savedCards: [PaymentCard] = []
+    @Published var emptyCardList: Bool = true
     
     let coreDS: CoreDataService
     
@@ -21,10 +22,14 @@ final class HomeViewModel: ObservableObject {
     func getCards() {
         DispatchQueue.main.async {
             self.savedCards = self.coreDS.getCards()
-            print("Saved Cards: \(self.savedCards)")
+            self.checkEmptyList()
         }
     }
     
+    func checkEmptyList() {
+        emptyCardList = savedCards.isEmpty
+    }
+        
 }
 
 

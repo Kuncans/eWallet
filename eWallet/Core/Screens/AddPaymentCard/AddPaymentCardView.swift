@@ -38,8 +38,6 @@ struct AddPaymentCardView: View {
                         }
                     }
                 
-               //NumberEntryLimitSizeField(boundNumber: $cardNumber, textPlaceholder: "Card Number", numberLimit: 17)
-                
                 TextField("Expiry Day", text: $vm.expiryMonth)
                     .keyboardType(.numberPad)
                     .onReceive(Just(vm.expiryMonth)) { newValue in
