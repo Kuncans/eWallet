@@ -21,56 +21,59 @@ struct AddPaymentFormView: View {
     
     var body: some View {
         
-        Form {
-
+        VStack {
+            
             TabView (selection: $selectedCard) {
                 ForEach(MockCard.mockPaymentCardList) { card in
                     PaymentCardView(paymentCard: card).tag(card)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .center)
-            .frame(minHeight: 220)
+            .frame(maxHeight: 220)
             .tabViewStyle(.page)
             
-            Section("Payment Details") {
-                TextField("Company Name", text: $toFrom)
-                    .lineLimit(1)
+            Form {
                 
-                TextField("Amount", value: $amount, format:
-                                .currency(code: Locale.current.currencyCode ?? "GBP"))
-                    .keyboardType(.decimalPad)
-                    .lineLimit(1)
-            }
-            
-            Section("Payment Options") {
-                Toggle("Outgoing Payment", isOn: $outgoingPayment)
-                
-                Toggle("Use Current Date/Time", isOn: $useCurrentDateTime.animation(.spring(response: 2, dampingFraction: 0.2, blendDuration: 0.7)))
-                   
-                if !useCurrentDateTime {
-                    DatePicker("", selection: $dateSelected, displayedComponents: [.date, .hourAndMinute])
-                        .datePickerStyle(.graphical)
+                Section("Payment Details") {
+                    TextField("Company Name", text: $toFrom)
+                        .lineLimit(1)
+                    
+                    TextField("Amount", value: $amount, format:
+                                    .currency(code: Locale.current.currencyCode ?? "GBP"))
+                        .keyboardType(.decimalPad)
+                        .lineLimit(1)
                 }
                 
-                Picker(selection: $paymentCategory) {
-                    ForEach(paymentType.allCases, id: \.self) { category in
-                        Text(category.rawValue.capitalized)
+                Section("Payment Options") {
+                    Toggle("Outgoing Payment", isOn: $outgoingPayment)
+                    
+                    Toggle("Use Current Date/Time", isOn: $useCurrentDateTime.animation(.spring(response: 2, dampingFraction: 0.2, blendDuration: 0.7)))
+                    
+                    if !useCurrentDateTime {
+                        DatePicker("", selection: $dateSelected, displayedComponents: [.date, .hourAndMinute])
+                            .datePickerStyle(.graphical)
                     }
-                }
+                    
+                    Picker(selection: $paymentCategory) {
+                        ForEach(paymentType.allCases, id: \.self) { category in
+                            Text(category.rawValue.capitalized)
+                        }
+                    }
                 label: {
                     Text("Category")
                 }
+                }
+                
+                Button {
+                    print("Saved Transaction \(selectedCard)")
+                } label: {
+                    Text("Submit Payment")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
             }
-            
-            Button {
-                print("Saved Transaction")
-            } label: {
-                Text("Submit Payment")
-                    .frame(maxWidth: .infinity, alignment: .center)
-            }
+            .navigationTitle("New Transaction")
+            //.navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle("New Transaction")
-        //.navigationBarTitleDisplayMode(.inline)
     }
 }
 

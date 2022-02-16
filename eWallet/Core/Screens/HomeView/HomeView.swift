@@ -21,6 +21,7 @@ struct HomeView: View {
                 
                 if !vm.emptyCardList {
                     cardScrollView
+                        .padding(.top, 16)
                 }
                 
                 if vm.emptyCardList {
@@ -28,6 +29,7 @@ struct HomeView: View {
                         presentSheet = true
                     } label: {
                         EmptyPaymentCardView()
+                            .padding(.top, 16)
                     }
 
                 }
@@ -38,12 +40,21 @@ struct HomeView: View {
                     }
                 }
                 .padding(.horizontal)
+                
+                NavigationLink {
+                    AddPaymentFormView()
+                } label: {
+                    Text("Add Transaction")
+                }
+
         
             }
             .sheet(isPresented: $presentSheet, onDismiss: {
                 vm.getCards()
             }, content: {
-                AddPaymentCardView()
+                NavigationView {
+                    AddPaymentCardView()
+                }
             })
 
         }
@@ -73,7 +84,6 @@ struct HomeView: View {
                     }
                   
                 }
-                .padding(.top, 56)
             }
 
             
@@ -83,13 +93,11 @@ struct HomeView: View {
                     presentSheet = true
                 } label: {
                     AddButtonView()
+
                 }
-                .padding(.top, 56   )
-
-
             }
         }
-        //.navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

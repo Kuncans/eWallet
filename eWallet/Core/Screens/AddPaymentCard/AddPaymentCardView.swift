@@ -85,9 +85,15 @@ struct AddPaymentCardView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
             
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Text("Back")
+                    .frame(maxWidth: .infinity, alignment: .center)
+            }
+            
         }
         .navigationTitle("New Payment Card")
-//        .navigationBarTitleDisplayMode(.default)
     }
 }
 
