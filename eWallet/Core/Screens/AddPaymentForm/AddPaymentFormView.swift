@@ -70,10 +70,13 @@ struct AddPaymentFormView: View {
                     Text("Submit Payment")
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
+                
             }
-            .navigationTitle("New Transaction")
-            //.navigationBarTitleDisplayMode(.inline)
+            
+            Spacer()
         }
+        .navigationTitle("New Transaction")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

@@ -11,7 +11,6 @@ struct HomeView: View {
     
     @StateObject private var vm = HomeViewModel()
     @State private var presentSheet: Bool = false
-    @State private var selectedCard: PaymentCard = MockCard.mockPaymentCard
         
     var body: some View {
         
@@ -20,7 +19,7 @@ struct HomeView: View {
                 
                 if !vm.emptyCardList {
                     cardScrollView
-                        .padding(.top, 16)
+                        .padding(.top, -80 )
                 }
                 
                 if vm.emptyCardList {
@@ -28,29 +27,32 @@ struct HomeView: View {
                         presentSheet = true
                     } label: {
                         EmptyPaymentCardView()
-                            .padding(.top, 16)
+                            .padding(.top, -80)
                     }
 
                 }
                 
-                ScrollView (.vertical) {
-                    ForEach(MockPayment.mockPaymentList) { payment in
-                        PaymentCellView(payment: payment)
-                    }
-                }
-                .padding(.horizontal)
+//                ScrollView (.vertical) {
+//                    ForEach(MockPayment.mockPaymentList) { payment in
+//                        PaymentCellView(payment: payment)
+//                    }
+//                }
+//                .padding(.horizontal)
+                                
+                Text("Discover")
+                    .font(.title2)
+                    .fontWeight(.medium)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 32)
+                    .padding(.top)
                 
-                NavigationLink {
-                    AddPaymentFormView()
-                } label: {
-                    Text("Add Transaction")
-                }
-
+                CategoryIconGridView()
+                
         
             }
             .sheet(isPresented: $presentSheet, onDismiss: {
                 vm.getCards()
-                updateSelectedCard()
+                vm.updateSelectedCard()
             }, content: {
                 NavigationView {
                     AddPaymentCardView()
@@ -60,29 +62,33 @@ struct HomeView: View {
         }
         .onAppear {
             vm.checkEmptyList()
-            updateSelectedCard()
+            vm.updateSelectedCard()
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                HStack {
+       
                     
-                    Image("Profile")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 44, height: 44)
-                        .clipShape(Circle())
-                        .padding(.horizontal, 8)
-                    
-                    VStack (alignment: .leading) {
-                        Text("Good day,")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                    HStack {
                         
-                        Text("Duncan Kent")
-                            .font(.headline)
-                            .foregroundColor(.primary)
-                    }
-                  
+                        Image("Profile")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 36, height: 36)
+                            .clipShape(Circle())
+                            .padding(.horizontal, 8)
+                           
+                        
+                        VStack (alignment: .leading) {
+                            Text("Good day,")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                            
+                            Text("Duncan Kent")
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                        }
+                      
+                    
                 }
             }
 
@@ -93,7 +99,6 @@ struct HomeView: View {
                     presentSheet = true
                 } label: {
                     AddButtonView()
-
                 }
             }
         }
@@ -101,13 +106,6 @@ struct HomeView: View {
         
     }
     
-    func updateSelectedCard() {
-        DispatchQueue.main.async {
-            if let card = vm.savedCards.first {
-                selectedCard = card
-            }
-        }
-    }
 }
 
 struct HomeView_Previews: PreviewProvider {
@@ -121,7 +119,7 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView  {
     
     private var cardScrollView: some View {
-        TabView (selection: $selectedCard) {
+        TabView (selection: $vm.selectedCard) {
             ForEach(vm.savedCards) { card in
                 PaymentCardView(paymentCard: card).tag(card)
             }
@@ -130,7 +128,7 @@ extension HomeView  {
         .frame(maxHeight: 220)
         .tabViewStyle(.page)
         .onTapGesture {
-            print("\(String(describing: selectedCard)))")
+            print("\(String(describing: vm.selectedCard)))")
         }
     }
 }

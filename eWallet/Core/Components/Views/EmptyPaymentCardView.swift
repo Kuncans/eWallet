@@ -13,7 +13,7 @@ struct EmptyPaymentCardView: View {
             Image(systemName: "plus.viewfinder")
                 .resizable()
                 .frame(width: 50, height: 50)
-                .foregroundColor(.black.opacity(0.5))
+                .foregroundColor(.black.opacity(0.2))
                 .padding(20)
                 .frame(minHeight: 205)
                 .frame(maxWidth: 350)

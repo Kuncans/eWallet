@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryIconGridView: View {
     
-    let columns = [GridItem(), GridItem(), GridItem()]
+    let columns = [GridItem(), GridItem(), GridItem(), GridItem()]
     
     var body: some View {
         

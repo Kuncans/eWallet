@@ -14,6 +14,8 @@
 		9530F36127AC202100F2F416 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36027AC202100F2F416 /* HomeView.swift */; };
 		9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36727AC20EB00F2F416 /* PaymentCardView.swift */; };
 		9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36A27AC2C9400F2F416 /* PaymentCard.swift */; };
+		955BC93E27BD541A00C65D37 /* AddPaymentFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BC93D27BD541A00C65D37 /* AddPaymentFormViewModel.swift */; };
+		955BC94027BD5BA000C65D37 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BC93F27BD5BA000C65D37 /* MainView.swift */; };
 		95915F5927BC041F006199BE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95915F5827BC041F006199BE /* HomeViewModel.swift */; };
 		95915F5C27BC046D006199BE /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95915F5B27BC046D006199BE /* CoreDataService.swift */; };
 		95915F5F27BC04C9006199BE /* EWalletContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95915F5D27BC04C9006199BE /* EWalletContainer.xcdatamodeld */; };
@@ -43,6 +45,8 @@
 		9530F36027AC202100F2F416 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9530F36727AC20EB00F2F416 /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
 		9530F36A27AC2C9400F2F416 /* PaymentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCard.swift; sourceTree = "<group>"; };
+		955BC93D27BD541A00C65D37 /* AddPaymentFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentFormViewModel.swift; sourceTree = "<group>"; };
+		955BC93F27BD5BA000C65D37 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		95915F5827BC041F006199BE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		95915F5B27BC046D006199BE /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		95915F5E27BC04C9006199BE /* EWalletContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EWalletContainer.xcdatamodel; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 		95A7B80127AFE86D001FEDA4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				955BC93F27BD5BA000C65D37 /* MainView.swift */,
 				95A7B80327AFE885001FEDA4 /* AddPaymentForm */,
 				95A7B80227AFE878001FEDA4 /* AddPaymentCard */,
 				9530F35F27AC201600F2F416 /* HomeView */,
@@ -214,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				95A7B7FA27AE1819001FEDA4 /* AddPaymentFormView.swift */,
+				955BC93D27BD541A00C65D37 /* AddPaymentFormViewModel.swift */,
 			);
 			path = AddPaymentForm;
 			sourceTree = "<group>";
@@ -303,11 +309,13 @@
 				95A7B7FB27AE1819001FEDA4 /* AddPaymentFormView.swift in Sources */,
 				95A7B80027AF3AB3001FEDA4 /* View+Ext.swift in Sources */,
 				95A7B80B27B15421001FEDA4 /* CategoryIconGridView.swift in Sources */,
+				955BC93E27BD541A00C65D37 /* AddPaymentFormViewModel.swift in Sources */,
 				95D1538627BC2575001CB22B /* AddPaymentCardViewModel.swift in Sources */,
 				9530F36827AC20EB00F2F416 /* PaymentCardView.swift in Sources */,
 				9530F35127AC1FE600F2F416 /* eWalletApp.swift in Sources */,
 				95915F5F27BC04C9006199BE /* EWalletContainer.xcdatamodeld in Sources */,
 				95D1538A27BD371B001CB22B /* AddButtonView.swift in Sources */,
+				955BC94027BD5BA000C65D37 /* MainView.swift in Sources */,
 				959CCEDF27AD924700A0C10D /* PaymentCellView.swift in Sources */,
 				95D1538027BC0C42001CB22B /* TransactionEntity+CoreDataClass.swift in Sources */,
 				95915F5C27BC046D006199BE /* CoreDataService.swift in Sources */,

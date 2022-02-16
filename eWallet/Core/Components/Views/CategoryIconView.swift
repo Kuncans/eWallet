@@ -35,6 +35,8 @@ struct CategoryIconView: View {
             
             Text(text)
                 .font(.caption)
+                .lineLimit(1)
+                .frame(width: 80)
             
         }
         

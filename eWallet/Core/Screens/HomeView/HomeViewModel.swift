@@ -12,7 +12,8 @@ final class HomeViewModel: ObservableObject {
     
     @Published var savedCards: [PaymentCard] = []
     @Published var emptyCardList: Bool = true
-    
+    @Published var selectedCard: PaymentCard = MockCard.mockPaymentCard
+
     let coreDS: CoreDataService
     
     init() {
@@ -29,6 +30,14 @@ final class HomeViewModel: ObservableObject {
     
     func checkEmptyList() {
         emptyCardList = savedCards.isEmpty
+    }
+    
+    func updateSelectedCard() {
+        DispatchQueue.main.async {
+            if let card = self.savedCards.first {
+                self.selectedCard = card
+            }
+        }
     }
         
 }

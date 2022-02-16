@@ -47,7 +47,7 @@ struct PaymentCardView: View {
         }
         .frame(maxHeight: 205)
         .cornerRadius(20)
-        .shadow(color: Color(paymentCard.cardColor).opacity(0.7), radius: 5, x: 1, y: 1)
+        .shadow(color: Color(paymentCard.cardColor).opacity(0.7), radius: 3, x: 0, y: 3)
         .padding(8)
     }
 }
@@ -134,7 +134,7 @@ extension PaymentCardView {
                 Spacer()
                 Text("Expires")
                     .font(.caption)
-                    .frame(maxWidth: 50, alignment: .leading)
+                    .frame(maxWidth: 60, alignment: .leading)
 
                 
             }
@@ -150,6 +150,7 @@ extension PaymentCardView {
                 
             }
         }
+        .padding(.bottom, 20)
     }
     
 }
