@@ -106,8 +106,8 @@ class CoreDataService {
     }
     
     func remove(card: PaymentCard) {
-        
-        if let entity = savedCards.first(where: { $0.cardID == card.id }) {
+        print("func run")
+        if let entity = savedCards.first(where: { $0.cardNumber == card.cardNumber }) {
             
             container.viewContext.delete(entity)
             

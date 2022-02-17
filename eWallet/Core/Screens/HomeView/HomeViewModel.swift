@@ -39,6 +39,10 @@ final class HomeViewModel: ObservableObject {
             }
         }
     }
+    
+    func deleteSelectedCard(card: PaymentCard?) {
+        coreDS.remove(card: card ?? MockCard.mockPaymentCard)
+    }
         
 }
 

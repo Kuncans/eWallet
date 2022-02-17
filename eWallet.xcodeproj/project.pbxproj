@@ -16,6 +16,8 @@
 		9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F36A27AC2C9400F2F416 /* PaymentCard.swift */; };
 		955BC93E27BD541A00C65D37 /* AddPaymentFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BC93D27BD541A00C65D37 /* AddPaymentFormViewModel.swift */; };
 		955BC94027BD5BA000C65D37 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BC93F27BD5BA000C65D37 /* MainView.swift */; };
+		955BC94327BDF81A00C65D37 /* EditPaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BC94227BDF81A00C65D37 /* EditPaymentCardView.swift */; };
+		955BC94527BDF8A800C65D37 /* EditPaymentCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BC94427BDF8A800C65D37 /* EditPaymentCardViewModel.swift */; };
 		95915F5927BC041F006199BE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95915F5827BC041F006199BE /* HomeViewModel.swift */; };
 		95915F5C27BC046D006199BE /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95915F5B27BC046D006199BE /* CoreDataService.swift */; };
 		95915F5F27BC04C9006199BE /* EWalletContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95915F5D27BC04C9006199BE /* EWalletContainer.xcdatamodeld */; };
@@ -47,6 +49,8 @@
 		9530F36A27AC2C9400F2F416 /* PaymentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCard.swift; sourceTree = "<group>"; };
 		955BC93D27BD541A00C65D37 /* AddPaymentFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentFormViewModel.swift; sourceTree = "<group>"; };
 		955BC93F27BD5BA000C65D37 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		955BC94227BDF81A00C65D37 /* EditPaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPaymentCardView.swift; sourceTree = "<group>"; };
+		955BC94427BDF8A800C65D37 /* EditPaymentCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPaymentCardViewModel.swift; sourceTree = "<group>"; };
 		95915F5827BC041F006199BE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		95915F5B27BC046D006199BE /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		95915F5E27BC04C9006199BE /* EWalletContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EWalletContainer.xcdatamodel; sourceTree = "<group>"; };
@@ -168,6 +172,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		955BC94127BDF80B00C65D37 /* EditPaymentCard */ = {
+			isa = PBXGroup;
+			children = (
+				955BC94227BDF81A00C65D37 /* EditPaymentCardView.swift */,
+				955BC94427BDF8A800C65D37 /* EditPaymentCardViewModel.swift */,
+			);
+			path = EditPaymentCard;
+			sourceTree = "<group>";
+		};
 		95915F5A27BC0446006199BE /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				955BC93F27BD5BA000C65D37 /* MainView.swift */,
+				955BC94127BDF80B00C65D37 /* EditPaymentCard */,
 				95A7B80327AFE885001FEDA4 /* AddPaymentForm */,
 				95A7B80227AFE878001FEDA4 /* AddPaymentCard */,
 				9530F35F27AC201600F2F416 /* HomeView */,
@@ -307,7 +321,9 @@
 				9530F36B27AC2C9400F2F416 /* PaymentCard.swift in Sources */,
 				95D1537E27BC0C42001CB22B /* CardEntity+CoreDataClass.swift in Sources */,
 				95A7B7FB27AE1819001FEDA4 /* AddPaymentFormView.swift in Sources */,
+				955BC94327BDF81A00C65D37 /* EditPaymentCardView.swift in Sources */,
 				95A7B80027AF3AB3001FEDA4 /* View+Ext.swift in Sources */,
+				955BC94527BDF8A800C65D37 /* EditPaymentCardViewModel.swift in Sources */,
 				95A7B80B27B15421001FEDA4 /* CategoryIconGridView.swift in Sources */,
 				955BC93E27BD541A00C65D37 /* AddPaymentFormViewModel.swift in Sources */,
 				95D1538627BC2575001CB22B /* AddPaymentCardViewModel.swift in Sources */,

@@ -19,7 +19,6 @@ struct HomeView: View {
                 
                 if !vm.emptyCardList {
                     cardScrollView
-                        .padding(.top, -80 )
                 }
                 
                 if vm.emptyCardList {
@@ -27,7 +26,6 @@ struct HomeView: View {
                         presentSheet = true
                     } label: {
                         EmptyPaymentCardView()
-                            .padding(.top, -80)
                     }
 
                 }
@@ -44,9 +42,10 @@ struct HomeView: View {
                     .fontWeight(.medium)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 32)
-                    .padding(.top)
                 
                 CategoryIconGridView()
+                
+                Spacer()
                 
         
             }
@@ -121,14 +120,21 @@ extension HomeView  {
     private var cardScrollView: some View {
         TabView (selection: $vm.selectedCard) {
             ForEach(vm.savedCards) { card in
-                PaymentCardView(paymentCard: card).tag(card)
-            }
+                    PaymentCardView(paymentCard: card).tag(card)
+                        .onTapGesture {
+                            vm.deleteSelectedCard(card: card)
+                            print("Should have deleted \(String(describing: vm.selectedCard))")
+                            vm.getCards()
+                        }
+                }
         }
         .frame(maxWidth: .infinity, alignment: .center)
         .frame(maxHeight: 220)
         .tabViewStyle(.page)
         .onTapGesture {
             print("\(String(describing: vm.selectedCard)))")
+
+            }
         }
-    }
+    
 }
